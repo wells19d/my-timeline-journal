@@ -21,11 +21,11 @@ CREATE TABLE "journal" (
 
 SELECT * FROM "user";
 
-INSERT INTO "user" ("username", "password", "email")
-VALUES ('wells', 'MasterCav','wells19d@gmail.com');
+INSERT INTO "user" ("username", "password", "email", "access_level")
+VALUES ('wells', '3165d0797376f3bfa9dfe32ebf9e4c62','wells19d@gmail.com', '1');
 
 INSERT INTO "user" ("username", "password", "email")
-VALUES ('mccloud', 'Zoey','amy.mccloud@gmail.com');
+VALUES ('mccloud', '7f78955442ceed7fc17020b2ee8c8a47','amy.mccloud@gmail.com');
 
 INSERT INTO "journal" ("user_id","date","entry")
 VALUES ('1', '2021/01/16','Micah''s Birthday. After work I helped Amy with Micahs cake. We didn''t want to spend a lot of money on it since we where taking him out for dinner. He really wanted something with Minecraft so Amy decided she wanted to make the cake herself. However, it didn''t cool properly, and it fell apart when she tried to get it out of the pan. After I got changed from work, I tried to help salvage what we could. We managed to turn it into a plains grass area, which actually turned out pretty decent. We then took the kids to Wings & Rings since Micah wanted to play games for his birthday. With Chucky Cheese shut down and no idea if they will ever re-open, this was his second choice. We met up with my mom, Bob, Tyler, and his mom. Overall the evening seemed to go well.');
