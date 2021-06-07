@@ -8,37 +8,40 @@ function Nav() {
   const user = useSelector((store) => store.user);
 
   let loginLinkData = {
-    path: '/login',
+    path: '/',
     text: 'Login / Register',
   };
 
   if (user.id != null) {
-    loginLinkData.path = '/user';
+    loginLinkData.path = '/main';
     loginLinkData.text = 'Home';
   }
 
   return (
     <div className="nav">
-      <Link to="/home">
+      <Link to="/">
         <h2 className="nav-title">Prime Solo Project</h2>
       </Link>
       <div>
         <Link className="navLink" to={loginLinkData.path}>
           {loginLinkData.text}
         </Link>
-
-        {user.id && (
-          <>
-            <Link className="navLink" to="/info">
-              Info Page
-            </Link>
-            <LogOutButton className="navLink" />
-          </>
-        )}
-
         <Link className="navLink" to="/about">
           About
         </Link>
+        <Link className="navLink" to="/contact">
+          Contact Us
+        </Link>
+        {user.id && (
+          <>
+            <Link className="navLink" to="/profile">
+              Profile
+            </Link>
+            <LogOutButton className="navLink" to="/"/>
+          </>
+        )}
+
+        
       </div>
     </div>
   );

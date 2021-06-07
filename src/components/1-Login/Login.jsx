@@ -2,13 +2,13 @@ import React from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
 
-function LoginPage() {
+function Login() {
   const history = useHistory();
 
   return (
     <div>
       <LoginForm />
-
+      This is the Main Login page
       <center>
         <button
           type="button"
@@ -24,4 +24,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default Login;
