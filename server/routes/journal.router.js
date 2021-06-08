@@ -10,9 +10,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     console.log('req.user:', req.user);
 
 
-    const queryText = `SELECT "user_id", "entry", "date" FROM "user"
-    JOIN "journal" ON "user"."id" = "user_id"
-    WHERE "user"."id" = $1;`;
+    const queryText = `SELECT "entry", "date" FROM "journal" WHERE "user_id" = $1;`;
     pool
     .query(queryText, [req.user.id])
     .then((result) => {
