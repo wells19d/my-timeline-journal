@@ -37,7 +37,7 @@ function Nav() {
             <Link className="navLink" to="/profile">
               Profile
             </Link>
-            <LogOutButton className="navLink" to="/login"/>  {/* Redirects a user, on log out, back to the login screen */}
+            <LogOutButton className="navLink" to="/" exact />  {/* Redirects a user, on log out, back to the login screen */}
           </>
         )}
 
