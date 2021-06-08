@@ -22,25 +22,4 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     });
 });
 
-// router.post('/', (req, res) => {
-//     console.log(req.body);
-//     const journalInsert = `
-//     INSERT INTO "journal" ("user_id","date","entry")
-//     VALUES ($1, $2, $3)
-//     RETURNING "id";`;
-//     pool.query(journalInsert, [
-//         req.body.user_id,
-//         req.body.date, 
-//         req.body.entry,
-//     ])
-//     .then((result) => {
-//         console.log(`New Journal Entry`, result.rows[0].id);
-//         res.sendStatus(201);
-//     })
-//     .catch((err) => {
-//         console.log(err);
-//         res.sendStatus(500);
-//       });
-// })
-
 module.exports = router;
