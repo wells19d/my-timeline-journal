@@ -9,7 +9,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
     console.log('req.user:', req.user);
 
-
+    // This is grabbing the entry and date from the journal, only for the person logged in.
     const queryText = `SELECT "entry", "date" FROM "journal" WHERE "user_id" = $1;`;
     pool
     .query(queryText, [req.user.id])
