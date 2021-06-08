@@ -12,14 +12,6 @@ import App from './components/App/App';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const journal = (state = [], action) => {
-  switch (action.type) {
-    case 'SET_JOURNAL':
-      return action.payload;
-    default:
-      return state;
-  }
-};
 
 // this line creates an array of all of redux middleware you want to use
 // we don't want a whole ton of console logs in our production code
@@ -38,7 +30,7 @@ const storeInstance = createStore(
 
 // tells the saga middleware to use the rootSaga
 // rootSaga contains all of our other sagas
-sagaMiddleware.run(rootSaga, newRootSaga);
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={storeInstance}>
