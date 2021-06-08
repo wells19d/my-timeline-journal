@@ -18,6 +18,7 @@ function View() {
                     <thead>
                         <tr>
                             <th>Date:</th>
+                            <th>Photo:</th>
                             <th>Entry:</th>
                         </tr>
                     </thead>
@@ -25,6 +26,7 @@ function View() {
                     {store.journal.map((journal, index) => (
                   <tr key={index}>
                     <td>{journal.date}</td>
+                    <td><img src={journal.photo}/></td>
                     <td>{journal.entry}</td>
                   </tr>
                 ))}

@@ -6,19 +6,22 @@ const {
 } = require('../modules/authentication-middleware');
 
 router.get('/', rejectUnauthenticated, (req, res) => {
+  console.log('req.user:', req.user);
 
-    console.log('req.user:', req.user);
-
-    // This is grabbing the entry and date from the journal, only for the person logged in.
-    const queryText = `SELECT "entry", "date" FROM "journal" WHERE "user_id" = $1;`;
-    pool
+  // This is grabbing the entry and date from the journal, only for the person logged in.
+  const queryText = `
+  SELECT "date", "photo", "entry" 
+  FROM "journal" 
+  WHERE "user_id" = $1 
+  ORDER BY "date" ASC;`;
+  pool
     .query(queryText, [req.user.id])
     .then((result) => {
-        res.send(result.rows);
+      res.send(result.rows);
     })
     .catch((err) => {
-        console.log(`ERROR: Unable to get Journal Entries`, err);
-        res.sendStatus(500);
+      console.log(`ERROR: Unable to get Journal Entries`, err);
+      res.sendStatus(500);
     });
 });
 
