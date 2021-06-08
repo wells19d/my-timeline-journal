@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import {useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 function LoginForm() {
+  const history = useHistory();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector(store => store.errors);
@@ -25,6 +28,7 @@ function LoginForm() {
   }; // end login
 
   return (
+    <Router>
     <form className="formPanel" onSubmit={login}>
       <h2>Login</h2>
       {errors.loginMessage && (
@@ -57,9 +61,19 @@ function LoginForm() {
         </label>
       </div>
       <div>
-        <input className="btn" type="submit" name="submit" value="Log In" />
+      <Button
+          type="submit"
+          className="btn btn_asLink"
+          onClick={() => {
+            history.push('/main');
+          }}
+        >
+        Login
+      </Button>
+        {/* <input className="btn" type="submit" name="submit" value="Log In" /> */}
       </div>
     </form>
+    </Router>
   );
 }
 

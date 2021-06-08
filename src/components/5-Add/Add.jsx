@@ -2,7 +2,7 @@ import React from 'react';
 
 function Add() {
     return (
-        <>This is the Add Page</>
+        <center><>This is the Add Page</></center>
     )
 }
 

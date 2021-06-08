@@ -2,7 +2,7 @@ import React from 'react';
 
 function Admin() {
     return (
-        <>This is the Add Page</>
+        <center><>This is the Add Page</></center>
     )
 }
 

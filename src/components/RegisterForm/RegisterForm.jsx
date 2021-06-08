@@ -21,7 +21,7 @@ function RegisterForm() {
     });
   }; // end registerUser
 
-  return (
+  return (<center>
     <form className="formPanel" onSubmit={registerUser}>
       <h2>Register User</h2>
       {errors.registrationMessage && (
@@ -69,6 +69,7 @@ function RegisterForm() {
         <input className="btn" type="submit" name="submit" value="Register" />
       </div>
     </form>
+    </center>
   );
 }
 

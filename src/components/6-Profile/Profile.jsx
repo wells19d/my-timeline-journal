@@ -5,7 +5,7 @@ function Profile() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   return (
-    <>This should be the User Profile Page.</>
+    <center><>This should be the User Profile Page.</></center>
   );
 }
 

@@ -39,17 +39,17 @@ function App() {
       <div>
         <Nav />
         <Switch>
-        <Redirect exact from="/login" to="/ " />
-        <ProtectedRoute exact path="/" authRedirect="/main" > <Login /> </ProtectedRoute>
-        <ProtectedRoute exact path="/registration" authRedirect="/" > <Register /> </ProtectedRoute>
-        <Route exact path="/main"><Main /></Route>
-        <Route exact path="/view"><View /></Route>
-        <Route exact path="/add"><Add /></Route>
-        <ProtectedRoute exact path="/profile"><Profile /></ProtectedRoute>
-        <Route exact path="/recovery"><Recovery /></Route>
-        <Route exact path="/contact"><ContactUs /></Route>
-        <Route exact path="/about"><AboutUs /></Route>
-        <Route exact path="/admin"><Admin /></Route>
+        <Redirect exact from="/login" to="/"/> 
+        <ProtectedRoute exact path="/" authRedirect="/main" ><Login /></ProtectedRoute> {/* This routes a user, after logging, to their home page */}
+        <Route exact path="/registration"><Register /></Route> {/* Anyone can register if they go to the correct route */}
+        <ProtectedRoute exact path="/main"><Main /></ProtectedRoute> {/* Only a logged in user can visit a main */}
+        <ProtectedRoute exact path="/view"><View /></ProtectedRoute> {/* Only a logged in user can view their posts */}
+        <ProtectedRoute exact path="/add"><Add /></ProtectedRoute> {/* Only a logged in user can make posts */}
+        <ProtectedRoute exact path="/profile"><Profile /></ProtectedRoute> {/* Only a logged in user can view their profile */}
+        <Route exact path="/recovery"><Recovery /></Route> {/* Anyone can visit the recover page */}
+        <Route exact path="/contact"><ContactUs /></Route> {/* Anyone can visit the Contact us page */}
+        <Route exact path="/about"><AboutUs /></Route> {/* Anyone can visit the About us page */}
+        <ProtectedRoute exact path="/admin"><Admin /></ProtectedRoute> {/* Only someone with access and logged in can view the admin page, this is a stretch goal */}
         </Switch>
         <Footer />
       </div>
