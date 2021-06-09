@@ -1,29 +1,22 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import useReduxStore from '../../hooks/useReduxStore';
 
 function View() {
   const dispatch = useDispatch();
   const store = useReduxStore();
 
-  const journal = useSelector(store => store.journal);
-  const current_user = useSelector(store => store.user);
-
   useEffect(() => {
     dispatch({ type: 'GET_ENTRY' });
   }, [dispatch]);
-  
+
   const deleteButton = (journalID) => {
-
-    // I have no idea if this setup works.
-
-  console.log(`Is this a delete handler`, journalID);
+    console.log(`Is this a delete handler`, journalID); // used to check if it was grabbing the correct ID to delete from
     dispatch({
       type: 'DELETE_ENTRY',
-      payload: journalID
-
-    })
-  }
+      payload: journalID,
+    });
+  };
 
   return (
     <center>
@@ -46,21 +39,24 @@ function View() {
                   <img src={journalEntry.photo} />
                 </td>
                 <td>{journalEntry.entry}</td>
-                
+
                 <td>
-                {/* <button onClick={(event) => {console.log(`Update Button Was Clicked`)}}>Update</button> */}
+                  {/* <button onClick={(event) => {console.log(`Update Button Was Clicked`)}}>Update</button> */}
                 </td>
                 <td>
-                <button onClick={(event) => {
-                  deleteButton(journalEntry.id); 
-                  {console.log(`Delete Button Was Clicked`)}}}>Delete</button>
+                  <button
+                    onClick={(event) => {
+                      deleteButton(journalEntry.id);
+                      {
+                        console.log(`Entry ${journalEntry.id} was deleted`);
+                      }
+                    }}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
-
-
-
-
           </tbody>
         </table>
       </div>

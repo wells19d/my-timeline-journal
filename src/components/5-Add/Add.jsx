@@ -22,7 +22,7 @@ function Add() {
 
   const addEntry = (event) => {
     event.preventDefault();
-    console.log(`Adding Movie`, { date, photo, entry });
+    console.log(`Added Journal Entry`, { date, photo, entry });
     history.push('./view');
 
     dispatch({
