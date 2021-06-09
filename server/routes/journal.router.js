@@ -25,4 +25,26 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     });
 });
 
+router.post('/', rejectUnauthenticated, (req, res) => {
+  console.log(req.body);
+  const queryText = `
+    INSERT INTO "journal" ("user_id", "date", "photo", "entry") 
+    VALUES ($1, $2, $3, $4);`;
+  pool
+    .query(queryText, [
+      req.user.id,
+      req.body.journal.date,
+      req.body.journal.photo,
+      req.body.journal.entry,
+    ])
+    .then((result) => {
+      console.log('New Entry:', result.rows);
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      console.log('Error in adding entry', error);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;

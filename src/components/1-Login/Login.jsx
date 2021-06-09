@@ -9,32 +9,32 @@ function Login() {
 
   return (
     <center>
-    <Router>
-    <div>
-      <LoginForm />
-      <center>
-      <Button
-          type="button"
-          className="btn btn_asLink"
-          onClick={() => {
-            history.push('/registration');
-          }}
-        >
-        Create Account 
-      </Button>
-      <br />
-      <Button
-          type="button"
-          className="btn btn_asLink"
-          onClick={() => {
-            history.push('/recovery');
-          }}
-        >
-        Forgot Username / Password ? 
-      </Button>
-      </center>
-    </div>
-    </Router>
+      <Router>
+        <div>
+          <LoginForm />
+          <center>
+            <Button
+              type='button'
+              className='btn btn_asLink'
+              onClick={() => {
+                history.push('/registration');
+              }}
+            >
+              Create Account
+            </Button>
+            <br />
+            <Button
+              type='button'
+              className='btn btn_asLink'
+              onClick={() => {
+                history.push('/recovery');
+              }}
+            >
+              Forgot Username / Password ?
+            </Button>
+          </center>
+        </div>
+      </Router>
     </center>
   );
 }

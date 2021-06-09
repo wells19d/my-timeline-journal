@@ -76,6 +76,18 @@ Button
   color: #008183;
 }
 
+.btn_asSubmit:hover {
+  background-color: transparent;
+  border-color: green;
+  color: green;
+}
+
+.btn_asCancel:hover {
+  background-color: transparent;
+  border-color: red;
+  color: red;
+}
+
 /* --------------------------------------------------------------------------------
 Alert
 -------------------------------------------------------------------------------- */

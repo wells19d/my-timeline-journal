@@ -9,20 +9,20 @@ function Register() {
 
   return (
     <Router>
-    <div>
-      <RegisterForm />
-      <center>
-      <Button
-          type="button"
-          className="btn btn_asLink"
-          onClick={() => {
-            history.push('/login');
-          }}
-        >
-        Back to Login
-      </Button>
-      </center>
-    </div>
+      <div>
+        <RegisterForm />
+        <center>
+          <Button
+            type='button'
+            className='btn btn_asLink'
+            onClick={() => {
+              history.push('/login');
+            }}
+          >
+            Back to Login
+          </Button>
+        </center>
+      </div>
     </Router>
   );
 }

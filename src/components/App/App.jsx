@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Route, Redirect, Switch, } from 'react-router-dom';
+import {
+  HashRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
@@ -27,25 +31,55 @@ function App() {
   }, [dispatch]);
 
   return (
-  <Router>
+    <Router>
       <div>
         <Nav />
         <Switch>
-        <Redirect exact from="/login" to="/"/> 
-        <ProtectedRoute exact path="/" authRedirect="/main" ><Login /></ProtectedRoute> {/* This routes a user, after logging, to their home page */}
-        <Route exact path="/registration"><Register /></Route> {/* Anyone can register if they go to the correct route */}
-        <ProtectedRoute exact path="/main"><Main /></ProtectedRoute> {/* Only a logged in user can visit a main */}
-        <ProtectedRoute exact path="/view"><View /></ProtectedRoute> {/* Only a logged in user can view their posts */}
-        <ProtectedRoute exact path="/add"><Add /></ProtectedRoute> {/* Only a logged in user can make posts */}
-        <ProtectedRoute exact path="/profile"><Profile /></ProtectedRoute> {/* Only a logged in user can view their profile */}
-        <Route exact path="/recovery"><Recovery /></Route> {/* Anyone can visit the recover page */}
-        <Route exact path="/contact"><ContactUs /></Route> {/* Anyone can visit the Contact us page */}
-        <Route exact path="/about"><AboutUs /></Route> {/* Anyone can visit the About us page */}
-        <ProtectedRoute exact path="/admin"><Admin /></ProtectedRoute> {/* Only someone with access and logged in can view the admin page, this is a stretch goal */}
+          <Redirect exact from='/login' to='/' />
+          <ProtectedRoute exact path='/' authRedirect='/main'>
+            <Login />
+          </ProtectedRoute>{' '}
+          {/* This routes a user, after logging, to their home page */}
+          <Route exact path='/registration'>
+            <Register />
+          </Route>{' '}
+          {/* Anyone can register if they go to the correct route */}
+          <ProtectedRoute exact path='/main'>
+            <Main />
+          </ProtectedRoute>{' '}
+          {/* Only a logged in user can visit a main */}
+          <ProtectedRoute exact path='/view'>
+            <View />
+          </ProtectedRoute>{' '}
+          {/* Only a logged in user can view their posts */}
+          <ProtectedRoute exact path='/add'>
+            <Add />
+          </ProtectedRoute>{' '}
+          {/* Only a logged in user can make posts */}
+          <ProtectedRoute exact path='/profile'>
+            <Profile />
+          </ProtectedRoute>{' '}
+          {/* Only a logged in user can view their profile */}
+          <Route exact path='/recovery'>
+            <Recovery />
+          </Route>{' '}
+          {/* Anyone can visit the recover page */}
+          <Route exact path='/contact'>
+            <ContactUs />
+          </Route>{' '}
+          {/* Anyone can visit the Contact us page */}
+          <Route exact path='/about'>
+            <AboutUs />
+          </Route>{' '}
+          {/* Anyone can visit the About us page */}
+          <ProtectedRoute exact path='/admin'>
+            <Admin />
+          </ProtectedRoute>{' '}
+          {/* Only someone with access and logged in can view the admin page, this is a stretch goal */}
         </Switch>
         <Footer />
       </div>
-  </Router>
+    </Router>
   );
 }
 

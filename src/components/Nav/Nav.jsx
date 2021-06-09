@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -18,30 +18,29 @@ function Nav() {
   }
 
   return (
-    <div className="nav">
-      <Link to="/">
-        <h2 className="nav-title">Prime Solo Project</h2>
+    <div className='nav'>
+      <Link to='/'>
+        <h2 className='nav-title'>Prime Solo Project</h2>
       </Link>
       <div>
-        <Link className="navLink" to={loginLinkData.path}>
+        <Link className='navLink' to={loginLinkData.path}>
           {loginLinkData.text}
         </Link>
-        <Link className="navLink" to="/about">
+        <Link className='navLink' to='/about'>
           About
         </Link>
-        <Link className="navLink" to="/contact">
+        <Link className='navLink' to='/contact'>
           Contact Us
         </Link>
         {user.id && (
           <>
-            <Link className="navLink" to="/profile">
+            <Link className='navLink' to='/profile'>
               Profile
             </Link>
-            <LogOutButton className="navLink" to="/" />  {/* Redirects a user, on log out, back to the login screen */}
+            <LogOutButton className='navLink' to='/' />{' '}
+            {/* Redirects a user, on log out, back to the login screen */}
           </>
         )}
-
-        
       </div>
     </div>
   );
