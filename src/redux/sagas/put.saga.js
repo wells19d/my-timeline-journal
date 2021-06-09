@@ -6,7 +6,7 @@ function* updateEntry(action) {
 
   try {
     let id = action.payload;
-    yield axios.put(`/api/shelf/${id}/`);
+    yield axios.put(`/api/journal/${id}/`);
     yield put({ type: 'SET_ENTRY' });
   } catch (error) {
     console.log('Error in adding new item', error);

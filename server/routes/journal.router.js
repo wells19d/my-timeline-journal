@@ -49,24 +49,41 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 });
 
 // -- Put Router -- //
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+  let 
+const queryText = `UPDATE "journal"
+  SET "date"=$1, "photo"=$2, "entry"=$3
+  WHERE "id"=$4 AND "user_id"=$5`;
+  pool
+    .query(queryText, [
+      req.body.journal.date, // $1
+      req.body.journal.photo, // $2
+      reg.body.journal.entry, // $3
+      req.params.id, // $4
+      req.user.id, // $5
+    ])
+    .then((result) => {
+      console.log('Updating Entry', result.rows);
+      res.sendStatus(204);
+    })
+    .catch((error) => {
+      console.log('Error updating entry', error);
+      res.sentStatus(500);
+    });
+});
 
 // This is deleting only the journal entries for the user logged in
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
-
-  console.log(req.params.id);
-  console.log('is authenticated?', req.isAuthenticated());
-  console.log('user', req.user);
-
   const queryText = `DELETE FROM "journal" WHERE "id" = $1
     AND "user_id" = $2;
     `;
-    pool.query(queryText, [req.params.id, req.user.id])
-        .then(() => res.sendStatus(201))
-        .catch(err => {
-            console.log(err);
-            res.sendStatus(500);
-        }
-    );
-})
+  pool
+    .query(queryText, [req.params.id, req.user.id])
+    .then(() => res.sendStatus(201))
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
 
 module.exports = router;

@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import useReduxStore from '../../hooks/useReduxStore';
+import { useHistory } from 'react-router-dom';
 
 function View() {
   const dispatch = useDispatch();
   const store = useReduxStore();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch({ type: 'GET_ENTRY' });
@@ -17,6 +19,8 @@ function View() {
       payload: journalID,
     });
   };
+
+
 
   return (
     <center>
@@ -41,7 +45,11 @@ function View() {
                 <td>{journalEntry.entry}</td>
 
                 <td>
-                  {/* <button onClick={(event) => {console.log(`Update Button Was Clicked`)}}>Update</button> */}
+                  <button 
+                  onClick={(event) => {
+                    history.push('./update')
+                    console.log(`Update Button Was Clicked`)
+                    }}>Update</button>
                 </td>
                 <td>
                   <button
