@@ -15,16 +15,6 @@ function Update(props) {
     const [photo, setPhoto] = useState(journalEntry.photo);
     const [entry, setEntry] = useState(journalEntry.entry);
 
-    // const journal = useSelector((store) => store.journal);
-    // console.log(`what's in here?`, journal); 
-    // const oldDate = useSelector((store) => store.journalReducer);
-    // const oldPhoto = useSelector((store) => store.journalReducer);
-    // const oldEntry = useSelector((store) => store.journalReducer);
-
-    // console.log('Old Date Here?', oldDate);
-    // console.log('Old Photo Here?', oldPhoto)
-    // console.log('Old Entry here?', oldEntry);
-
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -113,6 +103,7 @@ function Update(props) {
             Submit
           </Button>
         </form>
+        {JSON.stringify(journalEntry)}
       </center>
     </Router>
   );

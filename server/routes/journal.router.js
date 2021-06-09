@@ -34,9 +34,9 @@ router.post('/', rejectUnauthenticated, (req, res) => {
   pool
     .query(queryText, [
       req.user.id,
-      req.body.journal.date,
-      req.body.journal.photo,
-      req.body.journal.entry,
+      req.body.date,
+      req.body.photo,
+      req.body.entry,
     ])
     .then((result) => {
       console.log('New Entry:', result.rows);
@@ -50,17 +50,18 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 
 
 
+
+
 // -- Put Router -- //
 router.put('/:id', rejectUnauthenticated, (req, res) => {
-  let 
 const queryText = `UPDATE "journal"
   SET "date"=$1, "photo"=$2, "entry"=$3
   WHERE "id"=$4 AND "user_id"=$5`;
   pool
     .query(queryText, [
-      req.body.journal.date, // $1 
-      req.body.journal.photo, // $2
-      reg.body.journal.entry, // $3
+      req.body.date, // $1 
+      req.body.photo, // $2
+      req.body.entry, // $3
       req.params.id, // $4
       req.user.id, // $5
     ])
@@ -73,6 +74,10 @@ const queryText = `UPDATE "journal"
       res.sentStatus(500);
     });
 });
+
+
+
+
 
 
 // This is deleting only the journal entries for the user logged in
