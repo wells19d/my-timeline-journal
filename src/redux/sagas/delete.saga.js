@@ -2,7 +2,7 @@ import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
 function* deleteEntry(action) {
-  console.log('in delete entry', action);
+  console.log('Deleting entry', action);
 
   try {
     let id = action.payload;
@@ -14,7 +14,7 @@ function* deleteEntry(action) {
 }
 
 function* deleteSaga() {
-  yield takeEvery('DELETE_ENTRY', deleteEntry);
+  yield takeEvery( 'DELETE_ENTRY', deleteEntry);
 }
 
 export default deleteSaga;

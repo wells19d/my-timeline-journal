@@ -1,18 +1,20 @@
+import axios from 'axios';
+import { put, takeEvery } from 'redux-saga/effects';
+
 function* updateEntry(action) {
-    console.log('update entry', action);
-  
-    //     try {
-    //       let id = action.payload
-    //       // debugger;
-    //       yield axios.delete(`/api/shelf/${id}/`);
-    //       yield put({ type: 'GET_ENTRY' });
-    //     } catch (error) {
-    //       console.log('Error in adding new item', error);
-    //     }
+  console.log('update entry', action);
+
+  try {
+    let id = action.payload;
+    yield axios.put(`/api/shelf/${id}/`);
+    yield put({ type: 'SET_ENTRY' });
+  } catch (error) {
+    console.log('Error in adding new item', error);
   }
-  
-  function* putSaga() {
-    // yield takeEvery(' UPDATE_ENTRY', updateEntry);
-  }
-  
-  export default putSaga;
+}
+
+function* putSaga() {
+  yield takeEvery(' PUT_ENTRY', updateEntry);
+}
+
+export default putSaga;
