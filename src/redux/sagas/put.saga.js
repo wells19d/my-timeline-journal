@@ -5,9 +5,10 @@ function* updateEntry(action) {
   console.log('update entry', action);
 
   try {
-    let id = action.payload;
-    yield axios.put(`/api/journal/${id}/`);
-    yield put({ type: 'SET_ENTRY' });
+    // let id = action.payload;
+    console.log(`Getting the payload`, action.payload);
+    yield axios.put(`/api/journal/${id}/`, action.payload);
+    yield put({ type: 'GET_ENTRY' });
   } catch (error) {
     console.log('Error in adding new item', error);
   }

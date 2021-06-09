@@ -48,6 +48,8 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     });
 });
 
+
+
 // -- Put Router -- //
 router.put('/:id', rejectUnauthenticated, (req, res) => {
   let 
@@ -56,7 +58,7 @@ const queryText = `UPDATE "journal"
   WHERE "id"=$4 AND "user_id"=$5`;
   pool
     .query(queryText, [
-      req.body.journal.date, // $1
+      req.body.journal.date, // $1 
       req.body.journal.photo, // $2
       reg.body.journal.entry, // $3
       req.params.id, // $4
@@ -71,6 +73,7 @@ const queryText = `UPDATE "journal"
       res.sentStatus(500);
     });
 });
+
 
 // This is deleting only the journal entries for the user logged in
 router.delete('/:id', rejectUnauthenticated, (req, res) => {

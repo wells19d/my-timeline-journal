@@ -7,6 +7,7 @@ function View() {
   const dispatch = useDispatch();
   const store = useReduxStore();
   const history = useHistory();
+  
 
   useEffect(() => {
     dispatch({ type: 'GET_ENTRY' });
@@ -19,6 +20,15 @@ function View() {
       payload: journalID,
     });
   };
+
+  const updateButton = (journalEntry) => {
+    console.log(`Is this a update handler`, journalEntry); // used to check if it is grabbing the correct ID to update
+    dispatch({
+      type: 'SET_JOURNAL_DETAILS',
+      payload: journalEntry,
+    })
+    history.push('/update');
+  }
 
 
 
@@ -47,7 +57,7 @@ function View() {
                 <td>
                   <button 
                   onClick={(event) => {
-                    history.push('./update')
+                    updateButton(journalEntry);
                     console.log(`Update Button Was Clicked`)
                     }}>Update</button>
                 </td>

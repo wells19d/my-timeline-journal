@@ -2,22 +2,28 @@ import React from 'react';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 
-function Update() {
+function Update(props) {
 
-  const oldDate = useSelector((store) => store.journal.reducer);
-  console.log('Old Date Here?', oldDate);
-  const oldPhoto = useSelector((store) => store.journal.reducer);
-  console.log('Old Photo Here?', oldPhoto)
-  const oldEntry = useSelector((store) => store.journal.reducer);
-  console.log('Old Entry here?', oldEntry);
+    const journalEntry = useSelector(store => store.journalDetailsReducer);
+    console.log(`what's in here?`, journalEntry);
 
-  const [date, setDate] = useState(oldDate);
-  const [photo, setPhoto] = useState(oldPhoto);
-  const [entry, setEntry] = useState(oldEntry);
+    const [date, setDate] = useState(journalEntry.date);
+    const [photo, setPhoto] = useState(journalEntry.photo);
+    const [entry, setEntry] = useState(journalEntry.entry);
+
+    // const journal = useSelector((store) => store.journal);
+    // console.log(`what's in here?`, journal); 
+    // const oldDate = useSelector((store) => store.journalReducer);
+    // const oldPhoto = useSelector((store) => store.journalReducer);
+    // const oldEntry = useSelector((store) => store.journalReducer);
+
+    // console.log('Old Date Here?', oldDate);
+    // console.log('Old Photo Here?', oldPhoto)
+    // console.log('Old Entry here?', oldEntry);
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -28,19 +34,20 @@ function Update() {
     });
   }, []);
 
-  const addEntry = (event) => {
+  const updateEntry = (event) => {
     event.preventDefault();
     console.log(`Added Journal Entry`, { date, photo, entry });
-    history.push('./view');
 
     dispatch({
-      type: 'ADD_ENTRY',
+      type: 'UPDATE_ENTRY',
       payload: {
+        id: journalEntry.id,
         date: date,
         photo: photo,
         entry: entry,
       },
     });
+    history.push('./view');
   };
 
   return (
@@ -101,7 +108,7 @@ function Update() {
           <Button
             type='submit'
             className='btn btn_asSubmit'
-            onClick={(event) => addEntry(event)} // Sends user back to the main page
+            onClick={(event) => updateEntry(event)} // Sends user back to the main page
           >
             Submit
           </Button>
