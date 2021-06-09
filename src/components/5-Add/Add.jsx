@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
-import { sizing } from '@material-ui/system';
 
 function Add() {
   const [date, setDate] = useState('');
