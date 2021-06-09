@@ -10,7 +10,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
   // This is grabbing the entry and date from the journal, only for the person logged in.
   const queryText = `
-  SELECT "date", "photo", "entry" 
+  SELECT "id", "date", "photo", "entry" 
   FROM "journal" 
   WHERE "user_id" = $1 
   ORDER BY "date" ASC;`;
@@ -25,6 +25,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     });
 });
 
+// This is posting entries to the journal for only the person logged in.
 router.post('/', rejectUnauthenticated, (req, res) => {
   console.log(req.body);
   const queryText = `
@@ -46,5 +47,26 @@ router.post('/', rejectUnauthenticated, (req, res) => {
       res.sendStatus(500);
     });
 });
+
+// -- Put Router -- //
+
+// This is deleting only the journal entries for the user logged in
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+
+  console.log(req.params.id);
+  console.log('is authenticated?', req.isAuthenticated());
+  console.log('user', req.user);
+
+  const queryText = `DELETE FROM "journal" WHERE "id" = $1
+    AND "user_id" = $2;
+    `;
+    pool.query(queryText, [req.params.id, req.user.id])
+        .then(() => res.sendStatus(201))
+        .catch(err => {
+            console.log(err);
+            res.sendStatus(500);
+        }
+    );
+})
 
 module.exports = router;

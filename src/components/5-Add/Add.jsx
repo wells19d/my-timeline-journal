@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
@@ -14,7 +14,13 @@ function Add() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const handleSubmit = (event) => {
+  useEffect(() => {
+    dispatch({
+      type: 'GET_ENTRY',
+    });
+  }, []);
+
+  const addEntry = (event) => {
     event.preventDefault();
     console.log(`Adding Movie`, { date, photo, entry });
     history.push('./view');
@@ -32,7 +38,7 @@ function Add() {
   return (
     <Router>
       <center>
-        <form onSubmit={handleSubmit}>
+        <form>
           <TextField
             variant='outlined'
             label='Journal Event Date'
@@ -84,7 +90,11 @@ function Add() {
           >
             Cancel
           </Button>
-          <Button type='submit' className='btn btn_asSubmit'>
+          <Button
+            type='submit'
+            className='btn btn_asSubmit'
+            onClick={(event) => addEntry(event)} // Sends user back to the main page
+          >
             Submit
           </Button>
         </form>
