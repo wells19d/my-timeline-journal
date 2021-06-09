@@ -5,7 +5,7 @@ function* AddNewEntry(action) {
   console.log('Add Entry', action);
 
   try {
-    yield axios.post('/api/journal', { journal: action.payload }); // new journal entries
+    yield axios.post('/api/journal', action.payload); // new journal entries
     yield put({ type: 'GET_ENTRY' });
   } catch (error) {
     console.log('Error Adding Entry', error);

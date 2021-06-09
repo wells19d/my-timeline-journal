@@ -26,7 +26,7 @@ function Update(props) {
 
   const updateEntry = (event) => {
     event.preventDefault();
-    console.log(`Added Journal Entry`, { date, photo, entry });
+    
 
     dispatch({
       type: 'UPDATE_ENTRY',
@@ -38,6 +38,7 @@ function Update(props) {
       },
     });
     history.push('./view');
+    console.log(`Added Journal Entry`, { date, photo, entry });
   };
 
   return (

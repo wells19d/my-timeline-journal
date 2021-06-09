@@ -3,10 +3,10 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 function* updateEntry(action) {
   console.log('update entry', action);
-
+  
   try {
     let id = action.payload.id;
-    console.log(`Getting the payload`, action.payload);
+    console.log(`Getting the payload`, action.payload.id);
     yield axios.put(`/api/journal/${id}/`, action.payload);
     console.log(`What is the id? ${id}`);
     yield put({ type: 'GET_ENTRY' });
@@ -16,7 +16,7 @@ function* updateEntry(action) {
 }
 
 function* putSaga() {
-  yield takeEvery(' UPDATE_ENTRY', updateEntry);
+  yield takeEvery(' SET_JOURNAL_DETAILS', updateEntry);
 }
 
 export default putSaga;
