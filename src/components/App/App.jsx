@@ -12,6 +12,7 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import Login from '../1-Login/Login';
 import Register from '../2-Registration/Register';
+import UserAgreement from '../2-Registration/UserAgreement';
 import Main from '../3-Main/Main';
 import View from '../4-View/View';
 import Add from '../5-Add/Add';
@@ -36,10 +37,10 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Redirect exact from='/login' to='/' />
-          <ProtectedRoute exact path='/' authRedirect='/main'>
+          <Redirect exact from='/' to='/login' />
+          <Route exact path='/login' authRedirect='/main'>
             <Login />
-          </ProtectedRoute>
+          </Route>
           {/* This routes a user, after logging, to their home page */}
           <Route exact path='/registration'>
             <Register />
@@ -71,6 +72,10 @@ function App() {
           {/* Anyone can visit the Contact us page */}
           <Route exact path='/about'>
             <AboutUs />
+          </Route>
+          {/* Anyone can visit the About us page */}
+          <Route exact path='/agreement'>
+            <UserAgreement />
           </Route>
           {/* Anyone can visit the About us page */}
           <ProtectedRoute exact path='/admin'>
