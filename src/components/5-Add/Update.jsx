@@ -7,13 +7,12 @@ import { useHistory } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 
 function Update(props) {
+  const journalEntry = useSelector((store) => store.journalDetailsReducer);
+  console.log(`what's in here?`, journalEntry);
 
-    const journalEntry = useSelector(store => store.journalDetailsReducer);
-    console.log(`what's in here?`, journalEntry);
-
-    const [date, setDate] = useState(journalEntry.date);
-    const [photo, setPhoto] = useState(journalEntry.photo);
-    const [entry, setEntry] = useState(journalEntry.entry);
+  const [date, setDate] = useState(journalEntry.date);
+  const [photo, setPhoto] = useState(journalEntry.photo);
+  const [entry, setEntry] = useState(journalEntry.entry);
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -23,15 +22,6 @@ function Update(props) {
       type: 'FETCH_ENTRY',
     });
   }, []);
-
-
-
-
-
-
-
-
-
 
   const updateEntry = (event) => {
     event.preventDefault();
@@ -45,19 +35,10 @@ function Update(props) {
         photo: photo,
         entry: entry,
       },
-      
     });
     console.log(`Added Journal Entry`, { date, photo, entry });
     history.push('./view');
   };
-
-
-
-
-
-
-
-
 
   return (
     <Router>
