@@ -2,15 +2,17 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Main() {
   const history = useHistory();
+  const user = useSelector((store) => store.user);
 
   return (
     <Router>
       <center>
         <>
-          This is the Main User Page
+          Welcome {user.username}
           <p>
             <Button
               type='button'

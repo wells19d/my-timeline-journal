@@ -8,7 +8,7 @@ CREATE TABLE "user" (
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL,
     "email" VARCHAR (100) UNIQUE NOT NULL,
-    "access_level" INT DEFAULT '0'
+    "access_level" VARCHAR (6) DEFAULT 'Member'
 );
 
 CREATE TABLE "journal" (

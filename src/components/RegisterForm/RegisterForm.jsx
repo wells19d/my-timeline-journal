@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function RegisterForm() {
   const [username, setUsername] = useState('');
@@ -7,6 +8,7 @@ function RegisterForm() {
   const [email, setEmail] = useState('');
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const registerUser = (event) => {
     event.preventDefault();
@@ -48,6 +50,7 @@ function RegisterForm() {
             <input
               type='password'
               name='password'
+              label='Password'
               value={password}
               required
               onChange={(event) => setPassword(event.target.value)}
@@ -67,7 +70,15 @@ function RegisterForm() {
           </label>
         </div>
         <div>
-          <input className='btn' type='submit' name='submit' value='Register' />
+          <input
+            className='btn'
+            type='submit'
+            name='submit'
+            value='Register'
+            onClick={() => {
+              history.push('/profile');
+            }}
+          />
         </div>
       </form>
     </center>

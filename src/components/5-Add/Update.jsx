@@ -103,7 +103,6 @@ function Update(props) {
             Submit
           </Button>
         </form>
-        {JSON.stringify(journalEntry)}
       </center>
     </Router>
   );
