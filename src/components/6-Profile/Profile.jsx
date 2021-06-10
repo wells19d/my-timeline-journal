@@ -5,37 +5,31 @@ function Profile() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   return (
-    <div>
-      <center>
-        <>Profile Page</>
-      </center>
+    <center>
+      <p>Profile Page</p>
+      <br />
       <table>
         <thead></thead>
         <tbody>
           <tr>
-            <td>Your ID:</td>
-            {user.id}
-            <td></td>
+            <td>User ID:</td>
+            <td>{user.id}</td>
           </tr>
           <tr>
             <td>Username:</td>
-            {user.username}
+            <td>{user.username}</td>
           </tr>
           <tr>
             <td>Email:</td>
-            {user.email}
+            <td>{user.email}</td>
           </tr>
           <tr>
-            <td>Access Level:</td>
+            <td>Access:</td>
             <td>{user.access_level}</td>
-          </tr>
-
-          <tr>
-            <td></td>
           </tr>
         </tbody>
       </table>
-    </div>
+    </center>
   );
 }
 
