@@ -20,7 +20,7 @@ function Update(props) {
 
   useEffect(() => {
     dispatch({
-      type: 'GET_ENTRY',
+      type: 'FETCH_ENTRY',
     });
   }, []);
 

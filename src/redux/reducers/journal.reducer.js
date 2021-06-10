@@ -1,6 +1,6 @@
 const journalReducer = (state = [], action) => {
   switch (action.type) {
-    case 'SET_JOURNAL':
+    case 'SET_ENTRY':
       console.log('The payload is,', action.payload);
       return action.payload;
     case 'DELETE_ENTRY':

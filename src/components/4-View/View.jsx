@@ -10,7 +10,7 @@ function View() {
   
 
   useEffect(() => {
-    dispatch({ type: 'GET_ENTRY' });
+    dispatch({ type: 'FETCH_ENTRY' });
   }, [dispatch]);
 
   const deleteButton = (journalID) => {
@@ -24,7 +24,7 @@ function View() {
   const updateButton = (journalEntry) => {
     console.log(`Is this a update handler`, journalEntry); // used to check if it is grabbing the correct ID to update
     dispatch({
-      type: 'SET_JOURNAL_DETAILS',
+      type: 'GET_ENTRY',
       payload: journalEntry,
     })
     history.push('/update');

@@ -16,7 +16,7 @@ function Add() {
 
   useEffect(() => {
     dispatch({
-      type: 'GET_ENTRY',
+      type: 'FETCH_ENTRY',
     });
   }, []);
 

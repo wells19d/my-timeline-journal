@@ -7,7 +7,7 @@ function* deleteEntry(action) {
   try {
     let id = action.payload;
     yield axios.delete(`/api/journal/${id}/`);
-    yield put({ type: 'GET_ENTRY' });
+    yield put({ type: 'FETCH_ENTRY' });
   } catch (error) {
     console.log('Error deleting', error);
   }
