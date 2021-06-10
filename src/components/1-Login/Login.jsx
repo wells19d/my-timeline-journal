@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
+/* This is the landing page, the first page the users will see when going to the site. It shares a secondary view with the registration page */
+
 function Login() {
   const history = useHistory();
 
