@@ -7,7 +7,6 @@ function View() {
   const dispatch = useDispatch();
   const store = useReduxStore();
   const history = useHistory();
-  
 
   useEffect(() => {
     dispatch({ type: 'FETCH_ENTRY' });
@@ -26,11 +25,9 @@ function View() {
     dispatch({
       type: 'SET_ENTRY_DETAILS',
       payload: journalEntry,
-    })
+    });
     history.push('/update');
-  }
-
-
+  };
 
   return (
     <center>
@@ -55,11 +52,14 @@ function View() {
                 <td>{journalEntry.entry}</td>
 
                 <td>
-                  <button 
-                  onClick={(event) => {
-                    updateButton(journalEntry);
-                    console.log(`Update Button Was Clicked`)
-                    }}>Update</button>
+                  <button
+                    onClick={(event) => {
+                      updateButton(journalEntry);
+                      console.log(`Update Button Was Clicked`);
+                    }}
+                  >
+                    Update
+                  </button>
                 </td>
                 <td>
                   <button
