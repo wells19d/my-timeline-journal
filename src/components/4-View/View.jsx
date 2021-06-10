@@ -24,7 +24,7 @@ function View() {
   const updateButton = (journalEntry) => {
     console.log(`Is this a update handler`, journalEntry); // used to check if it is grabbing the correct ID to update
     dispatch({
-      type: 'GET_ENTRY',
+      type: 'SET_ENTRY_DETAILS',
       payload: journalEntry,
     })
     history.push('/update');

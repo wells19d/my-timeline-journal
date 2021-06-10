@@ -1,5 +1,5 @@
 const journalDetailsReducer = (state = {}, action) => {
-    if (action.type === 'SET_JOURNAL_DETAILS') {
+    if (action.type === 'SET_ENTRY_DETAILS') {
         return action.payload;
     }
     return state;

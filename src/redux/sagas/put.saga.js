@@ -6,17 +6,17 @@ function* updateEntry(action) {
   
   try {
     let id = action.payload.id;
-    console.log(`Getting the payload`, action.payload.id);
+    console.log(`Getting the payload`, action.payload);
     yield axios.put(`/api/journal/${id}/`, action.payload);
     console.log(`What is the id? ${id}`);
-    yield put({ type: 'UPDATE_ENTRY' });
+    yield put({ type: 'FETCH_ENTRY' });
   } catch (error) {
     console.log('Error in adding new item', error);
   }
 }
 
 function* putSaga() {
-  yield takeEvery(' SET_JOURNAL_DETAILS ', updateEntry);
+  yield takeEvery('UPDATE_ENTRY', updateEntry);
 }
 
 export default putSaga;
