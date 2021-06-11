@@ -3,6 +3,16 @@ import { useDispatch } from 'react-redux';
 import useReduxStore from '../../hooks/useReduxStore';
 import { useHistory } from 'react-router-dom';
 import moment from 'moment';
+import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import './View.css';
 
 function View() {
   const dispatch = useDispatch();
@@ -32,48 +42,55 @@ function View() {
 
   return (
     <center>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Date:</th>
-              <th>Photo:</th>
-              <th>Entry:</th>
-              <th>Update:</th>
-              <th>Delete:</th>
-            </tr>
-          </thead>
-          <tbody>
-            {store.journal.map((journalEntry, index) => (
-              <tr key={journalEntry.id}>
-                <td>{moment(journalEntry.date).format('MMM Do YYYY')}</td>
-                <td>
-                  <img src={journalEntry.photo} />
-                </td>
-                <td>{journalEntry.entry}</td>
-                <td>
-                  <button
-                    onClick={(event) => {
-                      updateButton(journalEntry);
-                    }}
+      <h2>View Entries</h2>
+      <section>
+        {store.journal.map((journalEntry, index) => {
+          return (
+            <Table className='cardDisplay' key={journalEntry.id}>
+              <TableBody>
+                <TableRow className='cardHeader'>
+                  <TableCell className='headerLeft'>
+                    Date: {moment(journalEntry.date).format('MMM Do YYYY')}
+                  </TableCell>
+                  <TableCell align='right' className='headerRight'>
+                    <Button
+                      className='btn_asSubmit'
+                      onClick={(event) => {
+                        updateButton(journalEntry);
+                      }}
+                    >
+                      Update
+                    </Button>
+                    {`\u00A0\u00A0\u00A0\u00A0`}
+                    <Button
+                      className='btn_asCancel'
+                      onClick={(event) => {
+                        deleteButton(journalEntry.id);
+                      }}
+                    >
+                      Delete
+                    </Button>
+                  </TableCell>
+                </TableRow>
+                <TableRow className='cardBody'>
+                  <TableCell
+                    style={{ verticalAlign: 'top' }}
+                    className='bodyLeft'
                   >
-                    Update
-                  </button>
-                </td>
-                <td>
-                  <button
-                    onClick={(event) => {
-                      deleteButton(journalEntry.id);
-                    }}
+                    <img className='imageReducer' src={journalEntry.photo} />
+                  </TableCell>
+                  <TableCell
+                    style={{ verticalAlign: 'top' }}
+                    className='bodyRight'
                   >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                    {journalEntry.entry}
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          );
+        })}
+      </section>
     </center>
   );
 }
