@@ -5,14 +5,16 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
+import moment from 'moment';
 
 function Update(props) {
   const journalEntry = useSelector((store) => store.journalDetailsReducer);
   console.log(`what's in here?`, journalEntry);
 
-  const [date, setDate] = useState(journalEntry.date);
+  const [date, setDate] = useState(moment(journalEntry.date).format('yyyy-MM-DD'));
   const [photo, setPhoto] = useState(journalEntry.photo);
   const [entry, setEntry] = useState(journalEntry.entry);
+  console.log(moment(journalEntry.date).format('yyyy-MM-DD'));
 
   const dispatch = useDispatch();
   const history = useHistory();

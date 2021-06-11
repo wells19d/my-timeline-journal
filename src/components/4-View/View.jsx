@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import useReduxStore from '../../hooks/useReduxStore';
 import { useHistory } from 'react-router-dom';
+import moment from 'moment';
 
 function View() {
   const dispatch = useDispatch();
   const store = useReduxStore();
   const history = useHistory();
+  
 
   useEffect(() => {
     dispatch({ type: 'FETCH_ENTRY' });
@@ -45,7 +47,7 @@ function View() {
           <tbody>
             {store.journal.map((journalEntry, index) => (
               <tr key={journalEntry.id}>
-                <td>{journalEntry.date}</td>
+                <td>{moment(journalEntry.date).format('MMMM Do YYYY')}</td>
                 <td>
                   <img src={journalEntry.photo} />
                 </td>
