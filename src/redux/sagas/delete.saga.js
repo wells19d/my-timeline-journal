@@ -2,7 +2,7 @@ import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
 function* deleteEntry(action) {
-  console.log('Deleting entry', action);
+  // console.log('Deleting entry', action); // was used to check the action of the entry being deleted
 
   try {
     let id = action.payload;

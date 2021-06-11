@@ -2,7 +2,7 @@ import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
 function* getAllEntries(action) {
-  console.log('Getting Entry', action);
+  //console.log('Getting Entry', action); // was used for checking the action when getting all entries
 
   try {
     const response = yield axios.get('/api/journal');

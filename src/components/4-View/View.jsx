@@ -15,7 +15,7 @@ function View() {
   }, [dispatch]);
 
   const deleteButton = (journalID) => {
-  //  console.log(`Is this a delete handler`, journalID);  used to check if it was grabbing the correct ID to delete from
+  //  console.log(`Is this a delete handler`, journalID);  // was used to check if it was grabbing the correct ID to delete from
     dispatch({
       type: 'DELETE_ENTRY',
       payload: journalID,
@@ -23,7 +23,7 @@ function View() {
   };
 
   const updateButton = (journalEntry) => {
-  //  console.log(`Is this a update handler`, journalEntry);  used to check if it is grabbing the correct ID to update
+  //  console.log(`Is this a update handler`, journalEntry);  // was used to check if it is grabbing the correct ID to update
     dispatch({
       type: 'SET_ENTRY_DETAILS',
       payload: journalEntry,
@@ -54,7 +54,7 @@ function View() {
                   <button
                     onClick={(event) => {
                       updateButton(journalEntry);
-                      console.log(`Update Button Was Clicked`);
+                      // console.log(`Update Button Was Clicked`); // was used for checking to see if the button was clicked
                     }}
                   >
                     Update
@@ -65,7 +65,7 @@ function View() {
                     onClick={(event) => {
                       deleteButton(journalEntry.id);
                       {
-                        console.log(`Entry ${journalEntry.id} was deleted`);
+                        // console.log(`Entry ${journalEntry.id} was deleted`); // was used for checking to what was deleted
                       }
                     }}
                   >

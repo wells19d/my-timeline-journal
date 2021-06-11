@@ -9,12 +9,12 @@ import moment from 'moment';
 
 function Update(props) {
   const journalEntry = useSelector((store) => store.journalDetailsReducer);
-  console.log(`what's in here?`, journalEntry);
+  // console.log(`what's in here?`, journalEntry); // was used for checking to see what was coming out of journalEntry, to varify what was brought over
 
   const [date, setDate] = useState(moment(journalEntry.date).format('yyyy-MM-DD'));
   const [photo, setPhoto] = useState(journalEntry.photo);
   const [entry, setEntry] = useState(journalEntry.entry);
-  console.log(moment(journalEntry.date).format('yyyy-MM-DD'));
+  // console.log(moment(journalEntry.date).format('yyyy-MM-DD')); // was used to check how to bring in the date format needed to pass date back into the date form
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -27,7 +27,7 @@ function Update(props) {
 
   const updateEntry = (event) => {
     event.preventDefault();
-    console.log(`Added Journal Entry`, { date, photo, entry });
+    // console.log(`Added Journal Entry`, { date, photo, entry }); // was used to checked what was being added into the journal entry
 
     dispatch({
       type: 'UPDATE_ENTRY',
@@ -38,7 +38,7 @@ function Update(props) {
         entry: entry,
       },
     });
-    console.log(`Added Journal Entry`, { date, photo, entry });
+    // console.log(`Added Journal Entry`, { date, photo, entry }); // was used to check what was being added into the journal entry also
     history.push('./view');
   };
 
