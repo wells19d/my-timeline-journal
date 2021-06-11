@@ -18,18 +18,3 @@ CREATE TABLE "journal" (
   "photo" VARCHAR (500),
   "entry" VARCHAR (1000)
 );
-
-SELECT * FROM "user";
-
--- Select Everyone
-SELECT * FROM "user"
-LEFT JOIN "journal" ON "user"."id" = "user_id";
-
--- Select One User
-SELECT * FROM "user"
-LEFT JOIN "journal" ON "user"."id" = "user_id"
-WHERE "user"."id" = 1;
-
-SELECT * FROM "user"
-LEFT JOIN "journal" ON "user"."id" = "user_id"
-WHERE "user"."id" = 2;
