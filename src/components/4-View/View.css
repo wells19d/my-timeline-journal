@@ -7,31 +7,26 @@
     box-shadow: 5px 5px 5px 0px gray;
 }
 
-.cardHeader {
-    border: solid black 2px;
-}
+
 .headerLeft {
-    border: solid black 2px;
     width: 200px;
 }
 .headerRight {
-    border: solid black 2px;
     width: 400px;
     
 }
 .bodyLeft {
-    border: solid black 2px;
     width: 200px;
     align-items: center;
 }
 .bodyRight {
-    border: solid black 2px;
     width: 400px;
     overflow: auto;
     font-size: 10px;
 }
 
 .imageReducer {
+    box-shadow: 2px 2px 2px 0px gray;
     border: solid black 2px;
     width: 170px;
 }
@@ -40,12 +35,14 @@
     background-color: transparent;
     border-color: green;
     color: green;
+    box-shadow: 2px 2px 2px 2px gray;
   }
   
   .btn_asCancel:hover {
     background-color: transparent;
     border-color: red;
     color: red;
+    box-shadow: 2px 2px 2px 2px gray;
   }
 
   .btn {
@@ -58,4 +55,5 @@
     font-size: 1.1rem;
     outline: 0;
     cursor: pointer;
+    box-shadow: 2px 2px 2px 2px gray;
   }

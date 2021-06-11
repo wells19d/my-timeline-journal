@@ -54,7 +54,7 @@ function View() {
                   </TableCell>
                   <TableCell align='right' className='headerRight'>
                     <Button
-                      className='btn_asSubmit'
+                      className='btn btn_asSubmit'
                       onClick={(event) => {
                         updateButton(journalEntry);
                       }}
@@ -63,7 +63,7 @@ function View() {
                     </Button>
                     {`\u00A0\u00A0\u00A0\u00A0`}
                     <Button
-                      className='btn_asCancel'
+                      className='btn btn_asCancel'
                       onClick={(event) => {
                         deleteButton(journalEntry.id);
                       }}

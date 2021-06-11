@@ -37,6 +37,7 @@ Button
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
+  box-shadow: 2px 2px 2px 0px gray;
 }
 
 .btn_sizeMin {
@@ -68,24 +69,28 @@ Button
   background: none;
   font: inherit;
   color: #444;
+  box-shadow: 2px 2px 2px 2px gray;
 }
 
 .btn_asLink:hover {
   background-color: transparent;
   border-color: #008183;
   color: #008183;
+  box-shadow: 2px 2px 2px 2px gray;
 }
 
 .btn_asSubmit:hover {
   background-color: transparent;
   border-color: green;
   color: green;
+  box-shadow: 2px 2px 2px 2px gray;
 }
 
 .btn_asCancel:hover {
   background-color: transparent;
   border-color: red;
   color: red;
+  box-shadow: 2px 2px 2px 2px gray;
 }
 
 /* --------------------------------------------------------------------------------
