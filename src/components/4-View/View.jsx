@@ -6,7 +6,7 @@ import moment from 'moment';
 
 function View() {
   const dispatch = useDispatch();
-  const store = useReduxStore();
+  const store = useReduxStore(); // Grabbing the store information from the journal table to display
   const history = useHistory();
   
 
@@ -15,7 +15,7 @@ function View() {
   }, [dispatch]);
 
   const deleteButton = (journalID) => {
-    console.log(`Is this a delete handler`, journalID); // used to check if it was grabbing the correct ID to delete from
+  //  console.log(`Is this a delete handler`, journalID);  used to check if it was grabbing the correct ID to delete from
     dispatch({
       type: 'DELETE_ENTRY',
       payload: journalID,
@@ -23,7 +23,7 @@ function View() {
   };
 
   const updateButton = (journalEntry) => {
-    console.log(`Is this a update handler`, journalEntry); // used to check if it is grabbing the correct ID to update
+  //  console.log(`Is this a update handler`, journalEntry);  used to check if it is grabbing the correct ID to update
     dispatch({
       type: 'SET_ENTRY_DETAILS',
       payload: journalEntry,
@@ -47,12 +47,9 @@ function View() {
           <tbody>
             {store.journal.map((journalEntry, index) => (
               <tr key={journalEntry.id}>
-                <td>{moment(journalEntry.date).format('MMMM Do YYYY')}</td>
-                <td>
-                  <img src={journalEntry.photo} />
-                </td>
+                <td>{moment(journalEntry.date).format('MMMM Do YYYY')}</td> {/* moment js setup to display a readable date on the dom for the user*/}
+                <td><img src={journalEntry.photo} /></td>
                 <td>{journalEntry.entry}</td>
-
                 <td>
                   <button
                     onClick={(event) => {
