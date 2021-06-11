@@ -47,7 +47,7 @@ function View() {
           <tbody>
             {store.journal.map((journalEntry, index) => (
               <tr key={journalEntry.id}>
-                <td>{moment(journalEntry.date).format('MMMM Do YYYY')}</td> {/* moment js setup to display a readable date on the dom for the user*/}
+                <td>{moment(journalEntry.date).format('MMM Do YYYY')}</td> {/* moment js setup to display a readable date on the dom for the user*/}
                 <td><img src={journalEntry.photo} /></td>
                 <td>{journalEntry.entry}</td>
                 <td>
