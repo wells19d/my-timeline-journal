@@ -8,6 +8,7 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
+import Swal from 'sweetalert2';
 import './View.css';
 
 function View() {
@@ -20,11 +21,27 @@ function View() {
   }, [dispatch]);
 
   const deleteButton = (journalID) => {
-    //  console.log(`Is this a delete handler`, journalID);  // was used to check if it was grabbing the correct ID to delete from
-    dispatch({
-      type: 'DELETE_ENTRY',
-      payload: journalID,
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+      // Added Sweet alert to fire when user wants to delete an item, prompting with a popup to confirm
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // if selected yes, fires the dispatch function
+        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+        dispatch({
+          type: 'DELETE_ENTRY',
+          payload: journalID,
+        });
+      }
+      // if the user selects no, bails out of the function here.
     });
+    //  console.log(`Is this a delete handler`, journalID);  // was used to check if it was grabbing the correct ID to delete from
   };
 
   const updateButton = (journalEntry) => {
