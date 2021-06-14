@@ -46,7 +46,7 @@ function View() {
               <TableBody>
                 <TableRow className='cardHeader'>
                   <TableCell className='headerLeft'>
-                    Date: {moment(journalEntry.date).format('MMM Do YYYY')}
+                    Date: {moment.utc(journalEntry.date).format('MMM Do YYYY')}
                   </TableCell>
                   <TableCell align='right' className='headerRight'>
                     <Button
