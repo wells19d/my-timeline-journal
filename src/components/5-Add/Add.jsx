@@ -53,8 +53,8 @@ function Add() {
           {`\u00A0\u00A0\u00A0\u00A0\u00A0`}
           <TextField
             variant='outlined'
-            label='Photo URL'
-            type='text'
+            label='Upload Photo'
+            type='file'
             value={photo}
             onChange={(event) => setPhoto(event.target.value)}
             InputLabelProps={{
