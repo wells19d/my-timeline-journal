@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
+import Swal from 'sweetalert2';
 
 function Add() {
   const [date, setDate] = useState('');
@@ -21,6 +22,12 @@ function Add() {
   }, []);
 
   const addEntry = (event) => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Your post was successful!',
+      showConfirmButton: false,
+      timer: 1500
+    })
     event.preventDefault();
     // console.log(`Added Journal Entry`, { date, photo, entry }); // checking to see what was added to the entry
     history.push('./view');

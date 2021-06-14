@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import moment from 'moment';
+import Swal from 'sweetalert2';
 
 function Update(props) {
   const journalEntry = useSelector((store) => store.journalDetailsReducer);
@@ -26,6 +27,12 @@ function Update(props) {
   }, []);
 
   const updateEntry = (event) => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Your post was updated!',
+      showConfirmButton: false,
+      timer: 1500
+    })
     event.preventDefault();
     // console.log(`Added Journal Entry`, { date, photo, entry }); // was used to checked what was being added into the journal entry
 
