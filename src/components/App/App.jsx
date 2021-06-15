@@ -21,7 +21,6 @@ import Profile from '../6-Profile/Profile';
 import Recovery from '../7-Recovery/Recovery';
 import ContactUs from '../8-ContactUs/ContactUs';
 import AboutUs from '../9-AboutUs/AboutUs';
-import Admin from '../10-Admin/Admin';
 
 import './App.css';
 
@@ -78,10 +77,6 @@ function App() {
             <UserAgreement />
           </Route>
           {/* Anyone can visit the About us page */}
-          <ProtectedRoute exact path='/admin'>
-            <Admin />
-          </ProtectedRoute>
-          {/* Only someone with access and logged in can view the admin page, this is a stretch goal */}
           <Route>
             <Update />
           </Route>
