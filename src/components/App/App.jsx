@@ -6,7 +6,6 @@ import {
   Switch,
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
@@ -21,7 +20,6 @@ import Profile from '../6-Profile/Profile';
 import Recovery from '../7-Recovery/Recovery';
 import ContactUs from '../8-ContactUs/ContactUs';
 import AboutUs from '../9-AboutUs/AboutUs';
-
 import './App.css';
 
 function App() {
