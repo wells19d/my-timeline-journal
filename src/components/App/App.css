@@ -157,6 +157,7 @@ input {
   border: solid black 2px;
   padding-top: 15px;
   padding-bottom: 15px;
+  box-shadow: 3px 3px 3px 3px gray;
 }
 
 .viewCard {
@@ -166,4 +167,5 @@ input {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
+  box-shadow: 3px 3px 3px 3px gray;
 }
