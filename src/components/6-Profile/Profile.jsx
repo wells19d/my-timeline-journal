@@ -22,10 +22,6 @@ function Profile() {
             <td>Email:</td>
             <td>{user.email}</td>
           </tr>
-          <tr>
-            <td>Access:</td>
-            <td>{user.access_level}</td>
-          </tr>
         </tbody>
       </table>
     </center>
