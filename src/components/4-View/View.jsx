@@ -6,7 +6,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -102,11 +101,11 @@ function View() {
             </TableCell>
             <TableCell className="tableCellRight">
               <Grid container spacing={3} className="viewRightTable">
-                <Grid item xs={4} />
-                <Grid item xs={4} />
-                <Grid item xs={4}>
+                <Grid item xs={4} className="viewButtonRow" />
+                <Grid item xs={4} className="viewButtonRow" />
+                <Grid item xs={4} className="viewButtonRow">
                   <Button
-                    className="btn btn_asSubmit viewbtn"
+                    className="btn btn_asSubmit"
                     onClick={(event) => {
                       updateButton(entry);
                     }}
@@ -115,7 +114,7 @@ function View() {
                   </Button>
                   {`\u00A0\u00A0\u00A0\u00A0`}
                   <Button
-                    className="btn btn_asCancel viewbtn"
+                    className="btn btn_asCancel"
                     onClick={(event) => {
                       deleteButton(entry.id);
                     }}
@@ -123,13 +122,12 @@ function View() {
                     Delete
                   </Button>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={3} className="viewContentRow">
                   <img className="imageReducer" src={entry.photo} />
                 </Grid>
-                <Grid item xs={9}>
+                <Grid item xs={9} className="viewContentRow">
                   {entry.entry}
                 </Grid>
-                <Grid item xs={12} />
               </Grid>
             </TableCell>
           </TableRow>

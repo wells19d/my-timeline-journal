@@ -20,6 +20,7 @@ import Profile from '../6-Profile/Profile';
 import Recovery from '../7-Recovery/Recovery';
 import ContactUs from '../8-ContactUs/ContactUs';
 import AboutUs from '../9-AboutUs/AboutUs';
+
 import './App.css';
 
 function App() {

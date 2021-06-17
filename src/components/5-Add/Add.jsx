@@ -81,7 +81,7 @@ function Add() {
             multiline
             rows={4}
             inputProps={{
-              maxLength: CHARACTER_LIMIT
+              maxLength: CHARACTER_LIMIT,
             }}
             helperText={`${entry.length}/${CHARACTER_LIMIT}`}
             onChange={(event) => setEntry(event.target.value)}
