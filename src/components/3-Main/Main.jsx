@@ -1,8 +1,12 @@
-import React from 'react';
 import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
 import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
 import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
+
+import React from 'react';
 import useReduxStore from '../../hooks/useReduxStore';
 import moment from 'moment';
 import { useHistory } from 'react-router-dom';
@@ -23,37 +27,33 @@ function Main() {
   return (
     <center>
       <Table className="displayTable">
-        <tbody className="tableBody">
-          <tr>
-            <td className="tableCellLeft">
-              <Card className="leftCard">
-                <ul>
-                  {store.journal.map((journalEntry, index) => {
-                    return (
-                      <li key={journalEntry.id}>
-                        <Link
-                          component="button"
-                          variant="body2"
-                          onClick={() => history.push(`/view/${journalEntry.id}`)}
-                        >
-                          {moment.utc(journalEntry.date).format('MMM Do YYYY')}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </Card>
-            </td>
-            <td className="tableCellRight">
-              <Card className="viewCard">
-                <center>
-                  Welcome {user.username}
+        <TableBody className="tableBody">
+          <TableRow>
+            <TableCell className="tableCellLeft">
+              <Typography className="leftTable" >
+            {store.journal.map((journalEntry, index) => {
+              return (<Link
+                key={journalEntry.id}
+                component="button"
+                variant="body2"
+                onClick={() => history.push(`/view/${journalEntry.id}`)}
+              >
+                {moment.utc(journalEntry.date).format('MMM Do YYYY')}
+              </Link>)
+            })}
+            </Typography>
+
+              
+
+            </TableCell>
+
+            <TableCell className="tableCellRight">
+              <Typography className="rightTable">Welcome {user.username}
+              <br />
                   <br />
                   <br />
                   <br />
                   <br />
-                  <br />
-                  <p>
                     <Button
                       type="button"
                       className="btn btn_asLink"
@@ -62,12 +62,24 @@ function Main() {
                       }}
                     >Add Entry
                     </Button>
-                  </p>
+              </Typography>
+            </TableCell>
+          </TableRow>
+        </TableBody>
+
+        {/* <tbody className="tableBody">
+          <tr>
+            
+            <td className="tableCellRight">
+              <Card className="viewCard">
+                <center>
+                  Welcome {user.username}
+                 
                 </center>
               </Card>
             </td>
           </tr>
-        </tbody>
+        </tbody> */}
       </Table>
     </center>
   );

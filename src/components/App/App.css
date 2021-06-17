@@ -92,6 +92,9 @@ Button
   color: red;
   box-shadow: 2px 2px 2px 2px gray;
 }
+.viewbtn{
+  align-items: right;
+}
 
 /* --------------------------------------------------------------------------------
 Alert
@@ -129,43 +132,58 @@ input {
 }
 
 .displayTable {
-  width: 1080px;
+  max-width: 1080px;
 }
 
 .tableBody {
-  border: solid black 1px;
+  border: solid black 0px;
 }
 
 .tableCellLeft {
-  border: solid black 1px;
+  border: solid black 0px;
   width: 25%;
-  padding-top: 35px;
-  padding-left: 35px;
-  padding-right: 35px;
-  padding-bottom: 35px;
 }
 
 .tableCellRight {
-  border: solid black 1px;
-  padding-top: 35px;
-  padding-right: 35px;
-  padding-bottom: 35px;
+  border: solid black 0px;
 }
 
-.leftCard {
-  height: 300px;
+.leftTable {
+  height: 365px;
   border: solid black 2px;
   padding-top: 15px;
   padding-bottom: 15px;
+  padding-right: 5px;
+  padding-left: 25px;
   box-shadow: 3px 3px 3px 3px gray;
+  max-width: 180px;
+  border-radius: 10px;
 }
 
-.viewCard {
-  height: 300px;
+.rightTable {
+  height: 365px;
   border: solid black 2px;
   padding-top: 15px;
-  padding-left: 15px;
+  padding-bottom: 15px;
   padding-right: 15px;
-  padding-bottom: 15px;
+  padding-left: 15px;
   box-shadow: 3px 3px 3px 3px gray;
+  max-width: 650px;
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.viewRightTable {
+  height: 400px;
+  border: solid black 2px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-shadow: 3px 3px 3px 3px gray;
+  max-width: 650px;
+  border-radius: 10px;
+  overflow: auto;
+
 }

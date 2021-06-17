@@ -1,3 +1,13 @@
+import Button from '@material-ui/core/Button';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -5,10 +15,6 @@ import useReduxStore from '../../hooks/useReduxStore';
 import { useHistory } from 'react-router-dom';
 import moment from 'moment';
 import { useSelector } from 'react-redux';
-import Link from '@material-ui/core/Link';
-import Card from '@material-ui/core/Card';
-import Button from '@material-ui/core/Button';
-import Table from '@material-ui/core/Table';
 import Swal from 'sweetalert2';
 import './View.css';
 
@@ -76,59 +82,58 @@ function View() {
   return (
     <center>
       <Table className="displayTable">
-        <tbody className="tableBody">
-          <tr>
-            <td className="tableCellLeft">
-              <Card className="leftCard">
-                <ul>
-                  {store.journal.map((journalEntry, index) => {
-                    return (
-                      <li key={journalEntry.id}>
-                        <Link
-                          component="button"
-                          variant="body2"
-                          onClick={() =>
-                            history.push(`/view/${journalEntry.id}`)
-                          }
-                        >
-                          {' '}
-                          {moment
-                            .utc(journalEntry.date)
-                            .format('MMM Do YYYY')}{' '}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </Card>
-            </td>
-            <td className="tableCellRight">
-              <Card className="viewCard">
-                <Button
-                  className="btn btn_asSubmit"
-                  onClick={(event) => {
-                    updateButton(entry);
-                  }}
-                >
-                  Update
-                </Button>
-                {`\u00A0\u00A0\u00A0\u00A0`}
-                <Button
-                  className="btn btn_asCancel"
-                  onClick={(event) => {
-                    deleteButton(entry.id);
-                  }}
-                >
-                  Delete
-                </Button>
-                <br />
-                <br />
-                <img className="imageReducer" src={entry.photo} />
-                {entry.entry}
-              </Card>
-            </td>
-          </tr>
-        </tbody>
+        <TableBody className="tableBody">
+          <TableRow>
+            <TableCell className="tableCellLeft">
+              <Typography className="leftTable">
+                {store.journal.map((journalEntry, index) => {
+                  return (
+                    <Link
+                      key={journalEntry.id}
+                      component="button"
+                      variant="body2"
+                      onClick={() => history.push(`/view/${journalEntry.id}`)}
+                    >
+                      {moment.utc(journalEntry.date).format('MMM Do YYYY')}
+                    </Link>
+                  );
+                })}
+              </Typography>
+            </TableCell>
+            <TableCell className="tableCellRight">
+              <Grid container spacing={3} className="viewRightTable">
+                <Grid item xs={4} />
+                <Grid item xs={4} />
+                <Grid item xs={4}>
+                  <Button
+                    className="btn btn_asSubmit viewbtn"
+                    onClick={(event) => {
+                      updateButton(entry);
+                    }}
+                  >
+                    Update
+                  </Button>
+                  {`\u00A0\u00A0\u00A0\u00A0`}
+                  <Button
+                    className="btn btn_asCancel viewbtn"
+                    onClick={(event) => {
+                      deleteButton(entry.id);
+                    }}
+                  >
+                    Delete
+                  </Button>
+                </Grid>
+                <Grid item xs={3}>
+                  <img className="imageReducer" src={entry.photo} />
+                </Grid>
+                <Grid item xs={9}>
+                  {entry.entry}
+                </Grid>
+                <Grid item xs={12} />
+              </Grid>
+            </TableCell>
+          </TableRow>
+        </TableBody>
       </Table>
     </center>
   );

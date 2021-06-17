@@ -15,6 +15,8 @@ function Add() {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const CHARACTER_LIMIT = 1000;
+
   useEffect(() => {
     dispatch({
       type: 'FETCH_ENTRY',
@@ -78,6 +80,10 @@ function Add() {
             value={entry}
             multiline
             rows={4}
+            inputProps={{
+              maxLength: CHARACTER_LIMIT
+            }}
+            helperText={`${entry.length}/${CHARACTER_LIMIT}`}
             onChange={(event) => setEntry(event.target.value)}
             required
             InputLabelProps={{
