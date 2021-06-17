@@ -133,11 +133,11 @@ input {
 }
 
 .tableBody {
-  border: solid black 0px;
+  border: solid black 1px;
 }
 
 .tableCellLeft {
-  border: solid black 0px;
+  border: solid black 1px;
   width: 25%;
   padding-top: 35px;
   padding-left: 35px;
@@ -146,7 +146,7 @@ input {
 }
 
 .tableCellRight {
-  border: solid black 0px;
+  border: solid black 1px;
   padding-top: 35px;
   padding-right: 35px;
   padding-bottom: 35px;

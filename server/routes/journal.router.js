@@ -25,6 +25,28 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     });
 });
 
+// -- for pulling out just single entries
+router.get('/:id', rejectUnauthenticated, (req, res) => {
+  console.log('req.user:', req.user);
+  console.log('journal entry', req.params);
+
+  // This is grabbing the entry and date from the journal, only for the person logged in.
+  const queryText = `
+  SELECT "id", "date", "photo", "entry" 
+  FROM "journal" 
+  WHERE "user_id" = $1 AND "journal"."id" = $2
+  ORDER BY "date" ASC;`;
+  pool
+    .query(queryText, [req.user.id, req.params.id])
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log(`ERROR: Unable to get Journal Entries`, err);
+      res.sendStatus(500);
+    });
+});
+
 // This is posting entries to the journal for only the person logged in.
 router.post('/', rejectUnauthenticated, (req, res) => {
   console.log(req.body);

@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import useReduxStore from '../../hooks/useReduxStore';
 import { useHistory } from 'react-router-dom';
 import moment from 'moment';
+import { useSelector } from 'react-redux';
+import Link from '@material-ui/core/Link';
+import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -15,6 +19,26 @@ function View() {
   const dispatch = useDispatch();
   const store = useReduxStore(); // Grabbing the store information from the journal table to display
   const history = useHistory();
+
+  // ----
+
+  const entries = useSelector((store) => store.journal); // entire journal list in redux
+  // console.log('whats in there', entries);
+
+  let params = useParams(); // grabbbing params from the react router
+  // console.log(params);
+
+  let id = params.id;
+
+  let entry = entries.find((entry) => entry.id === Number(id)); // hunting for the journal id given
+  // console.log(`Found entry`, entry);
+
+  if (!entry) {
+    // bailout if movie isn't found
+    return <h2> Entry Not Found</h2>;
+  }
+
+  // ---
 
   useEffect(() => {
     dispatch({ type: 'FETCH_ENTRY' });
@@ -55,6 +79,40 @@ function View() {
 
   return (
     <center>
+      <Table className="displayTable">
+        <tbody className="tableBody">
+          <tr>
+            <td className="tableCellLeft">
+              <Card className="leftCard">
+                <ul>
+                  {store.journal.map((journalEntry, index) => {
+                    return (
+                      <li key={journalEntry.id}>
+                        <Link component="button" variant="body2" onClick={() => history.push(`/view/${journalEntry.id}`)}> {moment.utc(journalEntry.date).format('MMM Do YYYY')} </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </Card>
+            </td>
+            <td className="tableCellRight">
+              <Card className="viewCard">
+              <img className='imageReducer' src={entry.photo} />
+                {entry.entry}
+                </Card>
+                </td>
+          </tr>
+        </tbody>
+      </Table>
+    </center>
+  );
+}
+
+export default View;
+
+/* 
+
+<center>
       <h2>View Entries</h2>
       <section>
         {store.journal.map((journalEntry, index) => {
@@ -105,7 +163,5 @@ function View() {
         })}
       </section>
     </center>
-  );
-}
 
-export default View;
+*/

@@ -47,7 +47,7 @@ function App() {
             <Main />
           </ProtectedRoute>
           {/* Only a logged in user can visit a main */}
-          <ProtectedRoute exact path='/view'>
+          <ProtectedRoute exact path='/view/:id'>
             <View />
           </ProtectedRoute>
           {/* Only a logged in user can view their posts */}
