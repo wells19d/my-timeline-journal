@@ -127,3 +127,45 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+.displayTable {
+  width: 1080px;
+}
+
+.tableBody {
+  border: solid black 1px;
+}
+
+.tableCellLeft {
+  border: solid black 1px;
+  width: 25%;
+  padding-top: 35px;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-bottom: 35px;
+}
+
+.tableCellRight {
+  border: solid black 1px;
+  padding-top: 35px;
+  padding-right: 35px;
+  padding-bottom: 35px;
+}
+
+.leftCard {
+  height: 300px;
+  border: solid black 2px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: 3px 3px 3px 3px gray;
+}
+
+.viewCard {
+  height: 300px;
+  border: solid black 2px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  box-shadow: 3px 3px 3px 3px gray;
+}
