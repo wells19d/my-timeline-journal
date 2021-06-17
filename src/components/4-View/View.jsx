@@ -122,6 +122,7 @@ function View() {
                   Delete
                 </Button>
                 <br />
+                <br />
                 <img className="imageReducer" src={entry.photo} />
                 {entry.entry}
               </Card>

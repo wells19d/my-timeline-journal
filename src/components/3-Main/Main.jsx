@@ -48,6 +48,11 @@ function Main() {
               <Card className="viewCard">
                 <center>
                   Welcome {user.username}
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
                   <p>
                     <Button
                       type="button"
@@ -56,15 +61,6 @@ function Main() {
                         history.push('/add');
                       }}
                     >Add Entry
-                    </Button>
-                    {`\u00A0\u00A0\u00A0\u00A0`}
-                    <Button
-                      type="button"
-                      className="btn btn_asLink"
-                      onClick={() => {
-                        history.push('/view');
-                      }}
-                    >View Page
                     </Button>
                   </p>
                 </center>
