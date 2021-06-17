@@ -21,6 +21,8 @@ function Update(props) {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const CHARACTER_LIMIT = 1000;
+
   useEffect(() => {
     dispatch({
       type: 'FETCH_ENTRY',
@@ -76,17 +78,20 @@ function Update(props) {
               shrink: true,
             }}
           />
-
           <br />
           <br />
           <TextField
-            variant='outlined'
-            label='Add Entry'
-            type='textarea'
+            variant="outlined"
+            label="Add Entry"
+            type="textarea"
             style={{ width: '500px' }}
             value={entry}
             multiline
             rows={4}
+            inputProps={{
+              maxLength: CHARACTER_LIMIT
+            }}
+            helperText={`${entry.length}/${CHARACTER_LIMIT}`}
             onChange={(event) => setEntry(event.target.value)}
             required
             InputLabelProps={{
