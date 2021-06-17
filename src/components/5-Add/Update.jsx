@@ -46,7 +46,7 @@ function Update(props) {
       },
     });
     // console.log(`Added Journal Entry`, { date, photo, entry }); // was used to check what was being added into the journal entry also
-    history.push('./view');
+    history.push('./main');
   };
 
   return (

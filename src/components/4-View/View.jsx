@@ -9,9 +9,6 @@ import Link from '@material-ui/core/Link';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
 import Swal from 'sweetalert2';
 import './View.css';
 
@@ -38,11 +35,9 @@ function View() {
     return <h2> Entry Not Found</h2>;
   }
 
-  // ---
-
-  useEffect(() => {
-    dispatch({ type: 'FETCH_ENTRY' });
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch({ type: 'FETCH_ENTRY' });
+  // }, [dispatch]);
 
   const deleteButton = (journalID) => {
     Swal.fire({
@@ -58,6 +53,7 @@ function View() {
       if (result.isConfirmed) {
         // if selected yes, fires the dispatch function
         Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+        history.push('../main');
         dispatch({
           type: 'DELETE_ENTRY',
           payload: journalID,
@@ -67,6 +63,8 @@ function View() {
     });
     //  console.log(`Is this a delete handler`, journalID);  // was used to check if it was grabbing the correct ID to delete from
   };
+  
+
 
   const updateButton = (journalEntry) => {
     //  console.log(`Is this a update handler`, journalEntry);  // was used to check if it is grabbing the correct ID to update
@@ -97,6 +95,24 @@ function View() {
             </td>
             <td className="tableCellRight">
               <Card className="viewCard">
+              <Button
+                      className='btn btn_asSubmit'
+                      onClick={(event) => {
+                        updateButton(entry);
+                      }}
+                    >
+                      Update
+                    </Button>
+                    {`\u00A0\u00A0\u00A0\u00A0`}
+                    <Button
+                      className='btn btn_asCancel'
+                      onClick={(event) => {
+                        deleteButton(entry.id);
+                      }}
+                    >
+                      Delete
+                    </Button>
+                    <br />
               <img className='imageReducer' src={entry.photo} />
                 {entry.entry}
                 </Card>

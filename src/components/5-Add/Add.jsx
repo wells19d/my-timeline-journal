@@ -30,7 +30,7 @@ function Add() {
     })
     event.preventDefault();
     // console.log(`Added Journal Entry`, { date, photo, entry }); // checking to see what was added to the entry
-    history.push('./view');
+    history.push('./main');
 
     dispatch({
       type: 'ADD_ENTRY',

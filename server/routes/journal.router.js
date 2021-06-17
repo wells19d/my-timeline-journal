@@ -34,7 +34,8 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
   const queryText = `
   SELECT "id", "date", "photo", "entry" 
   FROM "journal" 
-  WHERE "user_id" = $1 AND "journal"."id" = $2
+  WHERE "user_id" = $1 
+  AND "id" = $2
   ORDER BY "date" ASC;`;
   pool
     .query(queryText, [req.user.id, req.params.id])
@@ -95,11 +96,14 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
 
 // This is deleting only the journal entries for the user logged in
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
-  const queryText = `DELETE FROM "journal" WHERE "id" = $1
-    AND "user_id" = $2;
+  const queryText = `
+  DELETE 
+  FROM "journal" 
+  WHERE "user_id" = $1 
+  AND "id" = $2;
     `;
   pool
-    .query(queryText, [req.params.id, req.user.id])
+    .query(queryText, [req.user.id, req.params.id])
     .then(() => res.sendStatus(201))
     .catch((err) => {
       console.log(err);
