@@ -26,8 +26,8 @@ function Add() {
       icon: 'success',
       title: 'Your post was successful!',
       showConfirmButton: false,
-      timer: 1500
-    })
+      timer: 1500,
+    });
     event.preventDefault();
     // console.log(`Added Journal Entry`, { date, photo, entry }); // checking to see what was added to the entry
     history.push('./main');
@@ -47,9 +47,9 @@ function Add() {
       <center>
         <form>
           <TextField
-            variant='outlined'
-            label='Journal Event Date'
-            type='date'
+            variant="outlined"
+            label="Journal Event Date"
+            type="date"
             value={date}
             onChange={(event) => setDate(event.target.value)}
             required
@@ -59,9 +59,9 @@ function Add() {
           />
           {`\u00A0\u00A0\u00A0\u00A0\u00A0`}
           <TextField
-            variant='outlined'
-            label='Photo URL'
-            type='text'
+            variant="outlined"
+            label="Photo URL"
+            type="text"
             value={photo}
             onChange={(event) => setPhoto(event.target.value)}
             InputLabelProps={{
@@ -71,9 +71,9 @@ function Add() {
           <br />
           <br />
           <TextField
-            variant='outlined'
-            label='Add Entry'
-            type='textarea'
+            variant="outlined"
+            label="Add Entry"
+            type="textarea"
             style={{ width: '500px' }}
             value={entry}
             multiline
@@ -87,8 +87,8 @@ function Add() {
           <br />
           <br />
           <Button
-            type='button'
-            className='btn btn_asCancel'
+            type="button"
+            className="btn btn_asCancel"
             onClick={() => {
               history.push('/main'); // Sends user back to the main page
             }}
@@ -97,8 +97,8 @@ function Add() {
           </Button>
           {`\u00A0\u00A0\u00A0\u00A0`}
           <Button
-            type='submit'
-            className='btn btn_asSubmit'
+            type="submit"
+            className="btn btn_asSubmit"
             onClick={(event) => addEntry(event)} // Sends user back to the main page
           >
             Submit

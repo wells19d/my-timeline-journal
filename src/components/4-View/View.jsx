@@ -63,8 +63,6 @@ function View() {
     });
     //  console.log(`Is this a delete handler`, journalID);  // was used to check if it was grabbing the correct ID to delete from
   };
-  
-
 
   const updateButton = (journalEntry) => {
     //  console.log(`Is this a update handler`, journalEntry);  // was used to check if it is grabbing the correct ID to update
@@ -86,7 +84,18 @@ function View() {
                   {store.journal.map((journalEntry, index) => {
                     return (
                       <li key={journalEntry.id}>
-                        <Link component="button" variant="body2" onClick={() => history.push(`/view/${journalEntry.id}`)}> {moment.utc(journalEntry.date).format('MMM Do YYYY')} </Link>
+                        <Link
+                          component="button"
+                          variant="body2"
+                          onClick={() =>
+                            history.push(`/view/${journalEntry.id}`)
+                          }
+                        >
+                          {' '}
+                          {moment
+                            .utc(journalEntry.date)
+                            .format('MMM Do YYYY')}{' '}
+                        </Link>
                       </li>
                     );
                   })}
@@ -95,28 +104,28 @@ function View() {
             </td>
             <td className="tableCellRight">
               <Card className="viewCard">
-              <Button
-                      className='btn btn_asSubmit'
-                      onClick={(event) => {
-                        updateButton(entry);
-                      }}
-                    >
-                      Update
-                    </Button>
-                    {`\u00A0\u00A0\u00A0\u00A0`}
-                    <Button
-                      className='btn btn_asCancel'
-                      onClick={(event) => {
-                        deleteButton(entry.id);
-                      }}
-                    >
-                      Delete
-                    </Button>
-                    <br />
-              <img className='imageReducer' src={entry.photo} />
+                <Button
+                  className="btn btn_asSubmit"
+                  onClick={(event) => {
+                    updateButton(entry);
+                  }}
+                >
+                  Update
+                </Button>
+                {`\u00A0\u00A0\u00A0\u00A0`}
+                <Button
+                  className="btn btn_asCancel"
+                  onClick={(event) => {
+                    deleteButton(entry.id);
+                  }}
+                >
+                  Delete
+                </Button>
+                <br />
+                <img className="imageReducer" src={entry.photo} />
                 {entry.entry}
-                </Card>
-                </td>
+              </Card>
+            </td>
           </tr>
         </tbody>
       </Table>
@@ -125,59 +134,3 @@ function View() {
 }
 
 export default View;
-
-/* 
-
-<center>
-      <h2>View Entries</h2>
-      <section>
-        {store.journal.map((journalEntry, index) => {
-          return (
-            <Table className='cardDisplay' key={journalEntry.id}>
-              <TableBody>
-                <TableRow className='cardHeader'>
-                  <TableCell className='headerLeft'>
-                    Date: {moment.utc(journalEntry.date).format('MMM Do YYYY')}
-                  </TableCell>
-                  <TableCell align='right' className='headerRight'>
-                    <Button
-                      className='btn btn_asSubmit'
-                      onClick={(event) => {
-                        updateButton(journalEntry);
-                      }}
-                    >
-                      Update
-                    </Button>
-                    {`\u00A0\u00A0\u00A0\u00A0`}
-                    <Button
-                      className='btn btn_asCancel'
-                      onClick={(event) => {
-                        deleteButton(journalEntry.id);
-                      }}
-                    >
-                      Delete
-                    </Button>
-                  </TableCell>
-                </TableRow>
-                <TableRow className='cardBody'>
-                  <TableCell
-                    style={{ verticalAlign: 'top' }}
-                    className='bodyLeft'
-                  >
-                    <img className='imageReducer' src={journalEntry.photo} />
-                  </TableCell>
-                  <TableCell
-                    style={{ verticalAlign: 'top' }}
-                    className='bodyRight'
-                  >
-                    {journalEntry.entry}
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          );
-        })}
-      </section>
-    </center>
-
-*/
