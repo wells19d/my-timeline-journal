@@ -37,7 +37,11 @@ function View() {
 
   if (!entry) {
     // bailout if movie isn't found
-    return <h2> Entry Not Found</h2>;
+    return (
+      <center>
+        <h2 className="notFound"> Entry Not Found</h2>
+      </center>
+    );
   }
 
   // useEffect(() => {
@@ -80,6 +84,7 @@ function View() {
 
   return (
     <center>
+      <br />
       <Table className="displayTable">
         <TableBody className="tableBody">
           <TableRow>

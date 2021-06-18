@@ -26,60 +26,52 @@ function Main() {
 
   return (
     <center>
+      <br />
       <Table className="displayTable">
         <TableBody className="tableBody">
           <TableRow>
             <TableCell className="tableCellLeft">
-              <Typography className="leftTable" >
-            {store.journal.map((journalEntry, index) => {
-              return (<Link
-                key={journalEntry.id}
-                component="button"
-                variant="body2"
-                onClick={() => history.push(`/view/${journalEntry.id}`)}
-              >
-                {moment.utc(journalEntry.date).format('MMM Do YYYY')}
-              </Link>)
-            })}
-            </Typography>
-
-              
-
+              <Typography className="leftTable">
+                {store.journal.map((journalEntry, index) => {
+                  return (
+                    <Link
+                      key={journalEntry.id}
+                      component="button"
+                      variant="body2"
+                      onClick={() => history.push(`/view/${journalEntry.id}`)}
+                    >
+                      {moment.utc(journalEntry.date).format('MMM Do YYYY')}
+                    </Link>
+                  );
+                })}
+              </Typography>
             </TableCell>
 
             <TableCell className="tableCellRight">
-              <Typography className="rightTable">Welcome {user.username}
-              <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                    <Button
-                      type="button"
-                      className="btn btn_asLink"
-                      onClick={() => {
-                        history.push('/add');
-                      }}
-                    >Add Entry
-                    </Button>
+              <Typography className="rightTable">
+                <br />
+                Welcome {user.username}
+                <br />
+                <br />
+                <br />
+                Please Select a Date to View
+                <br />
+                or
+                <br />
+                <br />
+                <Button
+                  type="button"
+                  className="btn btn_asLink"
+                  onClick={() => {
+                    history.push('/add');
+                  }}
+                >
+                  Add New Entry
+                </Button>
               </Typography>
             </TableCell>
           </TableRow>
         </TableBody>
-
-        {/* <tbody className="tableBody">
-          <tr>
-            
-            <td className="tableCellRight">
-              <Card className="viewCard">
-                <center>
-                  Welcome {user.username}
-                 
-                </center>
-              </Card>
-            </td>
-          </tr>
-        </tbody> */}
       </Table>
     </center>
   );

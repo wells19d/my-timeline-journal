@@ -7,6 +7,8 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  background-image: url(./core_images/wallpaper-table.png);
+  font-family: "Gill Sans", sans-serif;
 }
 
 img {
@@ -29,15 +31,16 @@ Button
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  border-color: #014041;
+  border-color: black;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
   color: #f8f8f8;
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
   box-shadow: 2px 2px 2px 0px gray;
+  font-weight: bold;
+  background-image: url(./core_images/white.png);
 }
 
 .btn_sizeMin {
@@ -56,8 +59,10 @@ Button
 }
 
 .btn:hover {
+  font-weight: bold;
   background-color: #008183;
   text-decoration: none;
+  background-image: url(./core_images/white.png);
 }
 
 /* This line makes the "Register" and "Login" buttons look like links */
@@ -70,27 +75,30 @@ Button
   font: inherit;
   color: #444;
   box-shadow: 2px 2px 2px 2px gray;
+  background-image: url(./core_images/white.png);
+  font-weight: bold;
 }
 
 .btn_asLink:hover {
-  background-color: transparent;
-  border-color: #008183;
-  color: #008183;
+  font-weight: bold;
+  color: rgb(15, 5, 210);
   box-shadow: 2px 2px 2px 2px gray;
+  background-image: url(./core_images/white2.png);
 }
 
 .btn_asSubmit:hover {
-  background-color: transparent;
-  border-color: green;
+  font-weight: bold;
   color: green;
   box-shadow: 2px 2px 2px 2px gray;
+  background-color: white;
+  background-image: url(./core_images/white2.png);
 }
 
 .btn_asCancel:hover {
-  background-color: transparent;
-  border-color: red;
+  font-weight: bold;
   color: red;
   box-shadow: 2px 2px 2px 2px gray;
+  background-image: url(./core_images/white2.png);
 }
 .viewbtn{
   align-items: right;
@@ -146,48 +154,60 @@ input {
 
 .tableCellRight {
   border: solid black 0px;
+  margin: 5px;
 }
 
 .leftTable {
   height: 415px;
-  border: solid black 2px;
+  border: solid black 1px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 5px;
   padding-left: 25px;
-  box-shadow: 3px 3px 3px 3px gray;
-
+  box-shadow: 0px 0px 5px 5px rgb(90, 69, 41);
   min-width: 125px;
   max-width: 125px;
   border-radius: 10px;
   overflow: auto;
+  background-image: url(./core_images/paper.jpeg);
+  font-weight: bold;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 14px;
 }
 
 .rightTable {
   height: 415px;
-  border: solid black 2px;
+  border: solid black 1px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 15px;
   padding-left: 15px;
-  box-shadow: 3px 3px 3px 3px gray;
+  box-shadow: 0px 0px 5px 5px rgb(90, 69, 41);
   max-width: auto;
   border-radius: 10px;
   align-items: center;
   text-align: center;
+  background-image: url(./core_images/paper.jpeg);
+  font-weight: bold;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 16px;
 }
 
 .viewRightTable {
   height: 450px;
-  border: solid black 2px;
+  border: solid black 1px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 15px;
   padding-left: 15px;
-  box-shadow: 3px 3px 3px 3px gray;
-  max-width: 864px;
+  box-shadow: 0px 0px 5px 5px rgb(90, 69, 41);
+  max-width: 860px;
   border-radius: 10px;
   overflow: auto;
+  background-image: url(./core_images/paper.jpeg);
+  font-weight: bold;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 16px;
 }
 
 .viewButtonRow {
@@ -196,6 +216,11 @@ input {
 
 .viewContentRow {
   height: 350px;
+}
+.notFound{
+  margin-top: 15%;
+  margin-bottom: 20%;
+  color: white;
 }
 
 .MuiTableCell-root{border-bottom: none !important; }
