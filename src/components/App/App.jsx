@@ -35,44 +35,44 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Redirect exact from='/' to='/login' />
-          <Route exact path='/login' authRedirect='/main'>
+          <Redirect exact from="/" to="/login" />
+          <Route exact path="/login" authRedirect="/main">
             <Login />
           </Route>
           {/* This routes a user, after logging, to their home page */}
-          <Route exact path='/registration'>
+          <Route exact path="/registration">
             <Register />
           </Route>
           {/* Anyone can register if they go to the correct route */}
-          <ProtectedRoute exact path='/main'>
+          <ProtectedRoute exact path="/main">
             <Main />
           </ProtectedRoute>
           {/* Only a logged in user can visit a main */}
-          <ProtectedRoute exact path='/view/:id'>
+          <ProtectedRoute exact path="/view/:id">
             <View />
           </ProtectedRoute>
           {/* Only a logged in user can view their posts */}
-          <ProtectedRoute exact path='/add'>
+          <ProtectedRoute exact path="/add">
             <Add />
           </ProtectedRoute>
           {/* Only a logged in user can make posts */}
-          <ProtectedRoute exact path='/profile'>
+          <ProtectedRoute exact path="/profile">
             <Profile />
           </ProtectedRoute>
           {/* Only a logged in user can view their profile */}
-          <Route exact path='/recovery'>
+          <Route exact path="/recovery">
             <Recovery />
           </Route>
           {/* Anyone can visit the recover page */}
-          <Route exact path='/contact'>
+          <Route exact path="/contact">
             <ContactUs />
           </Route>
           {/* Anyone can visit the Contact us page */}
-          <Route exact path='/about'>
+          <Route exact path="/about">
             <AboutUs />
           </Route>
           {/* Anyone can visit the About us page */}
-          <Route exact path='/agreement'>
+          <Route exact path="/agreement">
             <UserAgreement />
           </Route>
           {/* Anyone can visit the About us page */}

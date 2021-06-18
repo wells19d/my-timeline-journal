@@ -49,20 +49,30 @@ function Main() {
             </TableCell>
             <TableCell className="tableCellRight">
               <Grid container spacing={3} className="rightTable">
-              <Grid item xs={12} />
-              <Grid item xs={12} />
-              <Grid item xs={12} />
-                <Grid item xs={12} className="introTitle">Welcome {user.username}</Grid>
-                <Grid item xs={12} className="introView">What would you like to do today?<br />To Review, Click a date <br /><br />or</Grid>
-                <Grid item xs={12} className="introView"><Button
-                  type="button"
-                  className="btn btn_asLink"
-                  onClick={() => {
-                    history.push('/add');
-                  }}
-                >
-                  Add New Entry
-                </Button></Grid>
+                <Grid item xs={12} />
+                <Grid item xs={12} />
+                <Grid item xs={12} />
+                <Grid item xs={12} className="introTitle">
+                  Welcome {user.username}
+                </Grid>
+                <Grid item xs={12} className="introView">
+                  What would you like to do today?
+                  <br />
+                  To Review, Click a date <br />
+                  <br />
+                  or
+                </Grid>
+                <Grid item xs={12} className="introView">
+                  <Button
+                    type="button"
+                    className="btn btn_asLink"
+                    onClick={() => {
+                      history.push('/add');
+                    }}
+                  >
+                    Add New Entry
+                  </Button>
+                </Grid>
                 <Grid item xs={12} />
                 <Grid item xs={12} />
                 <Grid item xs={12} />
@@ -76,4 +86,3 @@ function Main() {
 }
 
 export default Main;
-

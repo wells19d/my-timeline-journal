@@ -3,7 +3,7 @@ import '../App/App.css';
 
 function UserAgreement() {
   return (
-    <div className='container'>
+    <div className="container">
       <form>
         Welcome to My Timeline Journal: This is a sample USER END AGREEMENT
         only. END USER LICENSE AGREEMENT: Last updated June 10, 2021 My Timeline

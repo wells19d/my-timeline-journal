@@ -14,8 +14,8 @@ function Register() {
         <RegisterForm />
         <center>
           <Button
-            type='button'
-            className='btn btn_asLink'
+            type="button"
+            className="btn btn_asLink"
             onClick={() => {
               history.push('/login');
             }}

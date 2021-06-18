@@ -29,19 +29,19 @@ function LoginForm() {
 
   return (
     <Router>
-      <form className='formPanel' onSubmit={login}>
+      <form className="formPanel" onSubmit={login}>
         <h2>Login</h2>
         {errors.loginMessage && (
-          <h3 className='alert' role='alert'>
+          <h3 className="alert" role="alert">
             {errors.loginMessage}
           </h3>
         )}
         <div>
-          <label htmlFor='username'>
+          <label htmlFor="username">
             Username:
             <input
-              type='text'
-              name='username'
+              type="text"
+              name="username"
               required
               value={username}
               onChange={(event) => setUsername(event.target.value)}
@@ -49,11 +49,11 @@ function LoginForm() {
           </label>
         </div>
         <div>
-          <label htmlFor='password'>
+          <label htmlFor="password">
             Password:
             <input
-              type='password'
-              name='password'
+              type="password"
+              name="password"
               required
               value={password}
               onChange={(event) => setPassword(event.target.value)}
@@ -62,8 +62,8 @@ function LoginForm() {
         </div>
         <div>
           <Button
-            type='submit'
-            className='btn btn_asLink'
+            type="submit"
+            className="btn btn_asLink"
             onClick={() => {
               history.push('/main');
             }}

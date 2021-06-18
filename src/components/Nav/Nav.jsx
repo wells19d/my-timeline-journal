@@ -18,26 +18,26 @@ function Nav() {
   }
 
   return (
-    <div className='nav'>
-      <Link to='/main'>
-        <h2 className='nav-title'>My Timeline Journal</h2>
+    <div className="nav">
+      <Link to="/main">
+        <h2 className="nav-title">My Timeline Journal</h2>
       </Link>
       <div>
-        <Link className='navLink' to={loginLinkData.path}>
+        <Link className="navLink" to={loginLinkData.path}>
           {loginLinkData.text}
         </Link>
-        <Link className='navLink' to='/about'>
+        <Link className="navLink" to="/about">
           About
         </Link>
-        <Link className='navLink' to='/contact'>
+        <Link className="navLink" to="/contact">
           Contact Us
         </Link>
         {user.id && (
           <>
-            <Link className='navLink' to='/profile'>
+            <Link className="navLink" to="/profile">
               Profile
             </Link>
-            <LogOutButton className='navLink' to='/' />{' '}
+            <LogOutButton className="navLink" to="/" />{' '}
             {/* Redirects a user, on log out, back to the login screen */}
           </>
         )}
