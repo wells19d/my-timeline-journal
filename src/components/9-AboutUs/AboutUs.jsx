@@ -24,11 +24,11 @@ function AboutUs() {
           of your past? You have a few moments to spare, you could open up the
           App, entered in a few sentences, maybe a picture, and be done. What if
           you forgot to enter something that day? You could simply select the
-          prior date and drop some information about that day. A few days go by
+          prior date and drop some information about that day. A few days go by,
           and you remembered something you wanted to add… Just select that date
           you need and make a quick edit. How about you remembered something
           from your childhood, and you don't want to forget about it this time?
-          Or what if it's a memory you don't want to remember... just a a simple
+          Or what if it's a memory you don't want to remember... just a simple
           delete button.
           <br />
           <br />
