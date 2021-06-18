@@ -242,6 +242,21 @@ input {
   font-size: 17px;
 }
 
+.contact {
+  text-align: center;
+  font-size: 22px;
+}
+
+.profileLeft {
+  text-align: right;
+  font-size: 20px;
+}
+
+.profileRight {
+  text-align: left;
+  font-size: 20px;
+}
+
 .dateButton{
   font-weight: bold;
   font-size: 16px;
