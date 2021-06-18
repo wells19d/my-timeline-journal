@@ -1,13 +1,21 @@
 import React from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 import moment from 'moment';
 import Swal from 'sweetalert2';
+import '../App/App.css';
 
 function Update(props) {
   const journalEntry = useSelector((store) => store.journalDetailsReducer);

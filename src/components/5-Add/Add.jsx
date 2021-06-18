@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 import Swal from 'sweetalert2';
+import '../App/App.css';
 
 function Add() {
   const [date, setDate] = useState('');

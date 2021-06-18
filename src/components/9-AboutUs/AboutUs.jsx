@@ -1,28 +1,58 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import '../App/App.css';
 
 function AboutUs() {
   return (
-    <form>
-      Ever shared a moment of your past when suddenly you forgot... when, where,
-      or what exactly happened during that moment? Well for me it's been
-      happening a lot as I've gotten older. In the past I've tried writing down
-      my thoughts and events in a journal, but as we all know today's world has
-      become a busier place. Having time to sit and organize your thoughts has
-      become a challenge. Sure, you can use a medium like "Facebook", add some
-      entries about your day, and then you worry about what others have to say
-      or even think about what you are doing with your life... suddenly you've
-      become bitter and stop writing. Lately I've been thinking it would be nice
-      if you could have some app program that you could see as a timeline. You
-      could enter details about your day, maybe a few pictures, and save it to
-      your timeline. Let's say a few days later you remembered something you
-      wanted to add… Well, you just select that date and make a quick edit. How
-      about you remembered something from your childhood, and you don't want to
-      forget about it? Not a problem, you still select the date, write the
-      details, and drop it in. The point of the app is it wouldn't matter what
-      date you wanted to add, edit, move, or remove, you could easily do so and
-      have access to these memories whenever you wanted.
-    </form>
+    <center>
+      <br />
+      <Grid container spacing={3} className="rightTable">
+        <Grid item xs={12} className="about">
+          Ever shared a moment of your past when suddenly you asked yourself...
+          "Was that to correct year?", or "No, that happened the year before.",
+          or just simply forgot what happened in that moment. Well for some of
+          us as we get older, it begins to happen more often. Some of us decide
+          to start journals to help us remember but abandon it soon after. Most
+          of the time, having time to sit and organize your thoughts has become
+          the challenge,. Sure, you can use a medium like "Facebook", add some
+          entries about your day, but then you worry about what others have to
+          say or even think about how you are living your life... Now you've
+          become bitter and stop writing. <br />
+          <br />
+          Wouldn't it be great to have App where you could revisit those moments
+          of your past? You have a few moments to spare, you could open up the
+          App, entered in a few sentences, maybe a picture, and be done. What if
+          you forgot to enter something that day? You could simply select the
+          prior date and drop some information about that day. A few days go by
+          and you remembered something you wanted to add… Just select that date
+          you need and make a quick edit. How about you remembered something
+          from your childhood, and you don't want to forget about it this time?
+          Or what if it's a memory you don't want to remember... just a a simple
+          delete button.
+          <br />
+          <br />
+          The point of the app is it wouldn't matter when you remembered, you
+          could easily access to these memories whenever you wanted.
+        </Grid>
+      </Grid>
+      <br />
+    </center>
   );
 }
 
 export default AboutUs;
+
+/*
+
+<form>
+      
+    </form>
+
+*/

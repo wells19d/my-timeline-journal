@@ -15,7 +15,7 @@ import { useHistory } from 'react-router-dom';
 import moment from 'moment';
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
-import './View.css';
+import '../App/App.css';
 
 function View() {
   const dispatch = useDispatch();
@@ -93,19 +93,19 @@ function View() {
                 {store.journal.map((journalEntry, index) => {
                   return (
                     <Link
+                      className="dateButton"
                       key={journalEntry.id}
                       component="button"
-                      variant="body2"
                       onClick={() => history.push(`/view/${journalEntry.id}`)}
                     >
-                      {moment.utc(journalEntry.date).format('MMM Do YYYY')}
+                      {moment.utc(journalEntry.date).format('MMM Do, YYYY')}
                     </Link>
                   );
                 })}
               </Typography>
             </TableCell>
             <TableCell className="tableCellRight">
-              <Grid container spacing={3} className="viewRightTable">
+              <Grid container spacing={3} className="rightTable">
                 <Grid item xs={4} className="viewButtonRow" />
                 <Grid item xs={4} className="viewButtonRow" />
                 <Grid item xs={4} className="viewButtonRow">

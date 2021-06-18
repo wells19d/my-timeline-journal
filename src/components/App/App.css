@@ -157,13 +157,19 @@ input {
   margin: 5px;
 }
 
+.infoCell {
+  border: solid black 0px;
+  padding-left: 50%;
+  padding-right: 50%;
+}
+
 .leftTable {
   height: 415px;
   border: solid black 1px;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-right: 5px;
-  padding-left: 25px;
+  padding-right: 15px;
+  padding-left: 20px;
   box-shadow: 0px 0px 5px 5px rgb(90, 69, 41);
   min-width: 125px;
   max-width: 125px;
@@ -176,24 +182,23 @@ input {
 }
 
 .rightTable {
-  height: 415px;
+  height: 450px;
   border: solid black 1px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 15px;
   padding-left: 15px;
   box-shadow: 0px 0px 5px 5px rgb(90, 69, 41);
-  max-width: auto;
+  max-width: 860px;
   border-radius: 10px;
-  align-items: center;
-  text-align: center;
+  overflow: auto;
   background-image: url(./core_images/paper.jpeg);
   font-weight: bold;
   font-family: "Gill Sans", sans-serif;
   font-size: 16px;
 }
 
-.viewRightTable {
+.infoTable{
   height: 450px;
   border: solid black 1px;
   padding-top: 15px;
@@ -221,6 +226,32 @@ input {
   margin-top: 15%;
   margin-bottom: 20%;
   color: white;
+}
+
+.introTitle{
+  text-align: center;
+  font-size: 22px;;
+}
+
+.introView{
+  text-align: center;
+}
+
+.about {
+  text-align: justify;
+  font-size: 17px;
+}
+
+.dateButton{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.imageReducer {
+  box-shadow: 3px 3px 3px 2px gray;
+  border: solid black 2px;
+  width: 170px;
+  background-color: white;
 }
 
 .MuiTableCell-root{border-bottom: none !important; }

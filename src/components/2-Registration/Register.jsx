@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import '../App/App.css';
 
 function Register() {
   const history = useHistory();

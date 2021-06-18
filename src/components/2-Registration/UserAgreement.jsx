@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App/App.css';
 
 function UserAgreement() {
   return (

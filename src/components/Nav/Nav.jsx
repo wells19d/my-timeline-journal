@@ -19,7 +19,7 @@ function Nav() {
 
   return (
     <div className='nav'>
-      <Link to='/'>
+      <Link to='/main'>
         <h2 className='nav-title'>My Timeline Journal</h2>
       </Link>
       <div>

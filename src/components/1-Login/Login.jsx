@@ -3,6 +3,7 @@ import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import '../App/App.css';
 
 /* This is the landing page, the first page the users will see when going to the site. It shares a secondary view with the registration page */
 

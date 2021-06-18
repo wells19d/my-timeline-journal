@@ -5,6 +5,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 import React from 'react';
 import useReduxStore from '../../hooks/useReduxStore';
@@ -35,31 +36,25 @@ function Main() {
                 {store.journal.map((journalEntry, index) => {
                   return (
                     <Link
+                      className="dateButton"
                       key={journalEntry.id}
                       component="button"
-                      variant="body2"
                       onClick={() => history.push(`/view/${journalEntry.id}`)}
                     >
-                      {moment.utc(journalEntry.date).format('MMM Do YYYY')}
+                      {moment.utc(journalEntry.date).format('MMM Do, YYYY')}
                     </Link>
                   );
                 })}
               </Typography>
             </TableCell>
-
             <TableCell className="tableCellRight">
-              <Typography className="rightTable">
-                <br />
-                Welcome {user.username}
-                <br />
-                <br />
-                <br />
-                Please Select a Date to View
-                <br />
-                or
-                <br />
-                <br />
-                <Button
+              <Grid container spacing={3} className="rightTable">
+              <Grid item xs={12} />
+              <Grid item xs={12} />
+              <Grid item xs={12} />
+                <Grid item xs={12} className="introTitle">Welcome {user.username}</Grid>
+                <Grid item xs={12} className="introView">What would you like to do today?<br />To Review, Click a date <br /><br />or</Grid>
+                <Grid item xs={12} className="introView"><Button
                   type="button"
                   className="btn btn_asLink"
                   onClick={() => {
@@ -67,8 +62,11 @@ function Main() {
                   }}
                 >
                   Add New Entry
-                </Button>
-              </Typography>
+                </Button></Grid>
+                <Grid item xs={12} />
+                <Grid item xs={12} />
+                <Grid item xs={12} />
+              </Grid>
             </TableCell>
           </TableRow>
         </TableBody>
@@ -78,3 +76,4 @@ function Main() {
 }
 
 export default Main;
+
