@@ -15,7 +15,7 @@ function AboutUs() {
           us as we get older, it begins to happen more often. Some of us decide
           to start journals to help us remember but abandon it soon after. Most
           of the time, having time to sit and organize your thoughts has become
-          the challenge,. Sure, you can use a medium like "Facebook", add some
+          the challenge. Sure, you can use a medium like "Facebook", add some
           entries about your day, but then you worry about what others have to
           say or even think about how you are living your life... Now you've
           become bitter and stop writing. <br />
