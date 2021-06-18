@@ -11,7 +11,6 @@ import '../App/App.css';
 
 function ContactUs() {
   return (
-    <div>
       <center>
         <p>
           This is a feature coming soon, for now please <br />
@@ -21,7 +20,6 @@ function ContactUs() {
           !
         </p>
       </center>
-    </div>
   );
 }
 

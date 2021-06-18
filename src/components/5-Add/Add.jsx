@@ -1,12 +1,12 @@
 import React from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 import Swal from 'sweetalert2';
-import '../App/App.css';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 function Add() {
   const [date, setDate] = useState('');
@@ -48,6 +48,8 @@ function Add() {
   return (
     <Router>
       <center>
+        <Grid container spacing={3} className="rightTable">
+          <Grid item xs={12}>
         <form>
           <TextField
             variant="outlined"
@@ -111,6 +113,8 @@ function Add() {
             Submit
           </Button>
         </form>
+        </Grid>
+        </Grid>
       </center>
     </Router>
   );
