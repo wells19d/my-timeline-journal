@@ -64,6 +64,9 @@ function Update(props) {
         <Grid container spacing={3} className="rightTable">
           <Grid item xs={12}>
             <form>
+              <br />
+              <br />
+              <br />
               <TextField
                 variant="outlined"
                 label="Journal Event Date"
@@ -75,7 +78,7 @@ function Update(props) {
                   shrink: true,
                 }}
               />
-              {`\u00A0\u00A0\u00A0\u00A0\u00A0`}
+              {`\u00A0\u00A0\u00A0\u00A0\u00A0`} {/* These are just spaces used to help with spacing for temp usage */}
               <TextField
                 variant="outlined"
                 label="Photo URL"
@@ -118,7 +121,7 @@ function Update(props) {
               >
                 Cancel
               </Button>
-              {`\u00A0\u00A0\u00A0\u00A0`}
+              {`\u00A0\u00A0\u00A0\u00A0`} {/* These are just spaces used to help with spacing for temp usage */}
               <Button
                 type="submit"
                 className="btn btn_asSubmit"
@@ -136,72 +139,3 @@ function Update(props) {
 }
 
 export default Update;
-
-/*
-
-<form>
-          <TextField
-            variant='outlined'
-            label='Journal Event Date'
-            type='date'
-            value={date}
-            onChange={(event) => setDate(event.target.value)}
-            required
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-          {`\u00A0\u00A0\u00A0\u00A0\u00A0`}
-          <TextField
-            variant='outlined'
-            label='Photo URL'
-            type='text'
-            value={photo}
-            onChange={(event) => setPhoto(event.target.value)}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-          <br />
-          <br />
-          <TextField
-            variant="outlined"
-            label="Add Entry"
-            type="textarea"
-            style={{ width: '500px' }}
-            value={entry}
-            multiline
-            rows={4}
-            inputProps={{
-              maxLength: CHARACTER_LIMIT
-            }}
-            helperText={`${entry.length}/${CHARACTER_LIMIT}`}
-            onChange={(event) => setEntry(event.target.value)}
-            required
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-          <br />
-          <br />
-
-          <Button
-            type='button'
-            className='btn btn_asCancel'
-            onClick={() => {
-              history.push('/main'); // Sends user back to the main page
-            }}
-          >
-            Cancel
-          </Button>
-          {`\u00A0\u00A0\u00A0\u00A0`}
-          <Button
-            type='submit'
-            className='btn btn_asSubmit'
-            onClick={(event) => updateEntry(event)} // Sends user back to the main page
-          >
-            Submit
-          </Button>
-        </form>
-
-*/

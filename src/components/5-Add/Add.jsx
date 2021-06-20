@@ -52,6 +52,9 @@ function Add() {
         <br />
         <Grid container spacing={3} className="rightTable">
           <Grid item xs={12}>
+            <br />
+            <br /> {/* All the extra br's are just using to help with spacing for temp usage */}
+            <br />
             <form>
               <TextField
                 variant="outlined"
@@ -64,7 +67,7 @@ function Add() {
                   shrink: true,
                 }}
               />
-              {`\u00A0\u00A0\u00A0\u00A0\u00A0`}
+              {`\u00A0\u00A0\u00A0\u00A0\u00A0`} {/* These are just spaces used to help with spacing for temp usage */}
               <TextField
                 variant="outlined"
                 label="Photo URL"
@@ -106,7 +109,7 @@ function Add() {
               >
                 Cancel
               </Button>
-              {`\u00A0\u00A0\u00A0\u00A0`}
+              {`\u00A0\u00A0\u00A0\u00A0`} {/* These are just spaces used to help with spacing for temp usage */}
               <Button
                 type="submit"
                 className="btn btn_asSubmit"

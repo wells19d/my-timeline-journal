@@ -2,6 +2,8 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import '../App/App.css';
 
+// This is just explaining what the application is about.
+
 function AboutUs() {
   return (
     <center>
@@ -42,11 +44,3 @@ function AboutUs() {
 }
 
 export default AboutUs;
-
-/*
-
-<form>
-      
-    </form>
-
-*/

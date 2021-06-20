@@ -49,8 +49,8 @@ function Main() {
             </TableCell>
             <TableCell className="tableCellRight">
               <Grid container spacing={3} className="rightTable">
-                <Grid item xs={12} />
-                <Grid item xs={12} />
+                <Grid item xs={12} /> 
+                <Grid item xs={12} /> {/* These extra grids are just using to help with spacing for temp usage */}
                 <Grid item xs={12} />
                 <Grid item xs={12} className="introTitle">
                   Welcome {user.username}
@@ -74,7 +74,7 @@ function Main() {
                   </Button>
                 </Grid>
                 <Grid item xs={12} />
-                <Grid item xs={12} />
+                <Grid item xs={12} /> {/* These extra grids are just using to help with spacing for temp usage */}
                 <Grid item xs={12} />
               </Grid>
             </TableCell>

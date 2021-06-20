@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import '../App/App.css';
 
 function RegisterForm() {
   const [username, setUsername] = useState('');
@@ -25,7 +27,7 @@ function RegisterForm() {
 
   return (
     <center>
-      <form className="formPanel" onSubmit={registerUser}>
+      <form className="formPanel">
         <h2>Register User</h2>
         {errors.registrationMessage && (
           <h3 className="alert" role="alert">
@@ -70,15 +72,16 @@ function RegisterForm() {
           </label>
         </div>
         <div>
-          <input
-            className="btn"
+          <br />
+          <Button
+            className="btn btn_asLink"
             type="submit"
-            name="submit"
-            value="Register"
-            onClick={() => {
-              history.push('/profile');
+            onClick={(event) => {
+              registerUser(event), history.push('/profile');
             }}
-          />
+          >
+            Register
+          </Button>
         </div>
       </form>
     </center>

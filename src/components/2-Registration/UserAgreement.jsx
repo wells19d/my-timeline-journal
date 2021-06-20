@@ -1,6 +1,8 @@
 import React from 'react';
 import '../App/App.css';
 
+// This page will be used in the future as a UserAgreement that will need to be clicked / accepted to continue.
+
 function UserAgreement() {
   return (
     <div className="container">

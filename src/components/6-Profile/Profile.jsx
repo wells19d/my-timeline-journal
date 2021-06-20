@@ -14,20 +14,17 @@ function Profile() {
           Profile Page
         </Grid>
         <Grid item xs={6} className="profileLeft">
-          User ID:
-          <br />
           Username:
           <br />
           Email:
         </Grid>
         <Grid item xs={6} className="profileRight">
-          {user.id}
-          <br />
           {user.username}
           <br />
           {user.email}
+          <br />
         </Grid>
-        <Grid item xs={12} className="contact" />
+        <Grid item xs={12} className="contact">Additional Features Coming Soon</Grid>
       </Grid>
       <br />
     </center>

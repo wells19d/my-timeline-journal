@@ -30,6 +30,8 @@ function App() {
     dispatch({ type: 'FETCH_USER' });
   }, [dispatch]);
 
+  // Routes Page / Directory
+
   return (
     <Router>
       <div>

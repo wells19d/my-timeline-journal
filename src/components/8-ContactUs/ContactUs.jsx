@@ -2,6 +2,8 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import '../App/App.css';
 
+// This feature will be expanded out in the future for an email varification system.
+
 function ContactUs() {
   return (
     <center>

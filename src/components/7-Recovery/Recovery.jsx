@@ -9,6 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import '../App/App.css';
 
+// This page isn't being used yet. This will be a feature in the future.
+
 function Recovery() {
   return (
     <center>

@@ -21,22 +21,21 @@ function View() {
   const dispatch = useDispatch();
   const store = useReduxStore(); // Grabbing the store information from the journal table to display
   const history = useHistory();
-
-  // ----
-
+ 
   const entries = useSelector((store) => store.journal); // entire journal list in redux
   // console.log('whats in there', entries);
 
   let params = useParams(); // grabbbing params from the react router
   // console.log(params);
 
-  let id = params.id;
+  let id = params.id; // setup to use params
 
-  let entry = entries.find((entry) => entry.id === Number(id)); // hunting for the journal id given
+  let entry = entries.find((entry) => entry.id === Number(id));
+  // hunting for the journal id given and forcing as a number instead of a string
   // console.log(`Found entry`, entry);
 
   if (!entry) {
-    // bailout if movie isn't found
+    // bailout if entry isn't found
     return (
       <center>
         <h2 className="notFound"> Entry Not Found</h2>
@@ -44,9 +43,7 @@ function View() {
     );
   }
 
-  // useEffect(() => {
-  //   dispatch({ type: 'FETCH_ENTRY' });
-  // }, [dispatch]);
+  // a useEffect was once here during early development, but removed after refactor
 
   const deleteButton = (journalID) => {
     Swal.fire({
@@ -107,7 +104,7 @@ function View() {
             <TableCell className="tableCellRight">
               <Grid container spacing={3} className="rightTable">
                 <Grid item xs={4} className="viewButtonRow" />
-                <Grid item xs={4} className="viewButtonRow" />
+                <Grid item xs={4} className="viewButtonRow" /> {/* These extra grids are just using to help with spacing for temp usage */}
                 <Grid item xs={4} className="viewButtonRow">
                   <Button
                     className="btn btn_asSubmit"
@@ -117,7 +114,7 @@ function View() {
                   >
                     Update
                   </Button>
-                  {`\u00A0\u00A0\u00A0\u00A0`}
+                  {`\u00A0\u00A0\u00A0\u00A0`} {/* These are just spaces used to help with spacing for temp usage */}
                   <Button
                     className="btn btn_asCancel"
                     onClick={(event) => {
