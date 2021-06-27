@@ -37,10 +37,12 @@ function UserAgreement() {
         encrypted system to prevent outside usage. In no way will My Timeline
         Journal reveal any information uploaded into the system. All information
         will be kept in a confidential and secure section, unless required to by
-        legal requirements.
+        legal requirements. 
       </form>
     </div>
   );
 }
 
 export default UserAgreement;
+
+/* small change to check heroku push */
