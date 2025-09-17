@@ -1,3 +1,6 @@
+## This is a project back when I was a student at EDA Bootcamp for my final personal project. (2021)
+
+
 # My Memory Journal (Timeline App)
 
 A Journal Application designed currently for online entries to Add and Recall life events.
